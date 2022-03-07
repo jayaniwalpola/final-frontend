@@ -1,0 +1,70 @@
+<app-company-navbar></app-company-navbar>
+<app-company-sidenav></app-company-sidenav>
+    <div class="main" >
+      <div class="formDiv">
+         <p class="addChan">Add Channels</p>
+         <p class="createjobtopic">Create channels to add your job vacancies</p>
+         <div class="channelformadd">
+           <form class="formchannel"  #channelF="ngForm"  (ngSubmit)="addChannel(channelF)">
+             <div class="form-group">
+               <label for="channelname">Channel Name:</label>
+               <input type="text" name="email" id="channelname" class="form-control" placeholder="Enter Channel Name" [(ngModel)]="channel.channel_name">
+             </div>
+             <div class="form-group">
+               <label for="pwd">Channel Description:</label>
+               <textarea  [(ngModel)]="channel.description" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter Channel Description"  cols="40" rows="8"  >
+               </textarea>
+             </div>
+             <div class="btnCreate col-12 pr-0">
+               <input class="btn create-btn shadow border border-dark" type="submit" value="Create">
+             </div>
+           </form>
+         </div>
+       </div>
+       <div class="tableDiv">
+         <table class="st">
+           <thead>
+           <tr style="border-bottom:solid 1px black;">
+               <th style="border-radius: 15px 0 0 0;">Channel</th>
+               <th>Update</th>
+               <th style="border-radius: 0px 15px 0 0;">Delete</th>
+           </tr>
+           </thead>
+           <tr *ngFor = "let chann of channels" >
+               <td>{{chann.channel_name}}</td>
+               <td><i class="fa fa-pencil-square-o colorupdate" mat-button  style="color:rgb(163, 125, 163);" aria-hidden="true" routerLink="/channelUpdate/{{chann.id}}"  ></i></td>
+
+               <td><i class="fa fa-trash-o" aria-hidden="true" style="color:red" (click)="deleteChannel(chann.id)"></i></td>
+           </tr>
+
+          </table>
+
+       </div>
+
+
+ </div>
+ <!-- <router-outlet></router-outlet> -->
+
+<!-- <ng-template #content8 let-modal>
+  <div class="modal-header bg-default">
+    <h4 class="modal-title text-white" id="modal-basic-title">My Meetings</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form class="formchannel"  (ngSubmit)="addChannel()">
+    <div class="form-group">
+      <label for="channelname">Channel Name:</label>
+      <input type="text" name="email" id="channelname" formControlName="channel_name" class="form-control" placeholder="Enter Channel Name" >
+    </div>
+    <div class="form-group">
+      <label for="pwd">Channel Description:</label>
+      <textarea id="#myArea"  formControlName="description"    class="form-control" placeholder="Enter Channel Description"  cols="40" rows="8"  >
+
+      </textarea>
+    </div>
+    <div class="btnCreate col-12 pr-0">
+      <input class="btn create-btn shadow border border-dark" type="submit" value="Create">
+    </div>
+  </form>
+</ng-template> -->

@@ -1,0 +1,25 @@
+<app-company-navbar></app-company-navbar>
+<app-company-sidenav></app-company-sidenav>
+<div class="main">
+
+
+  <div class="addChan pb-3">
+    <p>Add Channels</p>
+  </div>
+  <div class="row m-0 d-flex">
+
+    <div routerLink="/channeladd" class="col-lg-3 col-12 pb-4 ">
+      <div class="cardBox">
+        <img src="../../../assets/img/22-227871_plus-sign-vector-graphic-transparent-png-plus-symbol-removebg-preview.png"  style="max-width: 70%;opacity: 0.5;">
+      </div>
+    </div>
+    <div class="col-12 col-lg-3  pb-4"  *ngFor = "let chann of channels">
+      <div class="cardBox" routerLink="/channelVacancy/{{chann.id}}" >
+        <div class="sizeB p-4 pb-2 " >
+          <h1 class="mt-4" >{{chann.channel_name}}</h1>
+          <!-- <p>{{chann.description}}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

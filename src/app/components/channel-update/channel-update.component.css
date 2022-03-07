@@ -1,0 +1,71 @@
+.main {
+  margin-left: 750px; /* Same as the width of the sidenav */
+  margin-top: 100px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  text-align:center;
+
+}
+.scroll{
+  margin-left: 400px; /* Same as the width of the sidenav */
+  margin-top: 100px;
+}
+.addChan{
+  text-align: center;
+  font-size:25px;
+  color:#421358e5;
+  font-weight:bold;
+
+}
+.createjobtopic{
+  text-align: left;
+  font-size:15px;
+  color:#421358b0;
+
+  font-weight:bold;
+}
+.formchannel{
+  text-align: left;
+  font-size:20px;
+
+  color:#42135885;
+  font-weight:bold;
+}
+.channelformadd{
+  width:400px;
+}
+.create-btn
+{
+  color:white;
+  font-weight: bold;
+  font-family: arial;
+  font-size:20px;
+  background-color:#4a255c;
+  padding: 8px 50px;
+  border-radius: 50px;
+  float: right;
+}
+
+.formDiv{
+  float: left;
+  background-color:rgba(128, 0, 128, 0.295);
+  padding:35px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+  .main {
+    margin-left: 330px; /* Same as the width of the sidenav */
+  }
+  .colorupdate{
+    color: red;
+
+  }
+}
+

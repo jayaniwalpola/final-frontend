@@ -1,0 +1,56 @@
+.main {
+  margin-left: 350px; /* Same as the width of the sidenav */
+  margin-top: 100px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  text-align:center;
+
+}
+.addbox{
+  background-color:#42135842;
+  width:23%;
+  height:25%;
+  border-radius: 30px;
+  border: 1px solid #42135825 ;
+  box-shadow: 1px 1px #110f0f54;
+}
+.addChan{
+  text-align: left;
+  font-size:25px;
+  color:#421358e5;
+  font-weight:bold;
+  margin-left: 20px;
+
+
+}
+.cardBox{
+  background-color:#42135842;
+  border-radius: 30px;
+  border: 1px solid #42135825 ;
+  box-shadow: 1px 1px #110f0f54;
+  height: 100%;
+  padding: 20px 20px 10px;
+}
+ .sizeB h1{
+  /* padding:8px; */
+  text-align: center;
+  font-size: 40px;
+  color:#421358e5;
+}
+.sizeB p{
+  text-align: center;
+  font-size: 30px;
+  color:#42135880;
+}
+/*
+@media only screen and (max-width: 1000px) {
+  h1{
+    padding:130px;
+  }
+} */
+/* .sizeB{
+  padding:30px;
+} */
+[class*="col-"] {
+  margin-bottom: 30px;
+}

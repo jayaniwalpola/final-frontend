@@ -1,0 +1,18 @@
+.nav-bar-company{
+  background-color: white;
+  border-bottom: 0.5px solid #421358;
+  font-size:20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  height: 90px;
+  width: 100%;
+  z-index:1;
+
+
+}
+.nav-link{
+  color:#421358;
+  font-family: arial,sans-serif;
+}

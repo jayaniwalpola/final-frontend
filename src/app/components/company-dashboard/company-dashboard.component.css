@@ -1,0 +1,24 @@
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  margin-top: 100px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  text-align: center;
+}
+
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+.topicLinkup{
+  color:#421358;
+  font-weight: bold;
+
+}
+.addyoujob{
+  color:#421358;
+  font-size: 20px;
+  font-weight: bold;
+
+}
