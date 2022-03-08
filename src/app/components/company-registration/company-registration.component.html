@@ -20,25 +20,31 @@
       <div class="col-md-4">
         <input type="text" class="form-control rounded-0" placeholder="Enter Company Address" name="address" [(ngModel)]="company.address">
       </div>
-      <label class="col-md-2" for="">Password:</label>
+      <label class="col-md-2" for="">Company Description:</label>
       <div class="col-md-4">
-        <input type="password" class="form-control rounded-0" placeholder="Enter Password" name="password" [(ngModel)]="company.password">
+        <textarea name="description" id="" class="form-control rounded-0" cols="44" rows="2" [(ngModel)]="company.description" [ngModelOptions]="{standalone: true}" placeholder="Comapny description" ></textarea>
       </div>
+
     </div>
     <div class="row pb-3">
       <label class="col-md-2" for="">Company Email:</label>
       <div class="col-md-4">
         <input type="email" class="form-control rounded-0" placeholder="Enter Company Email" name="email" [(ngModel)]="company.email">
       </div>
-      <label class="col-md-2" for="">Confirm Password:</label>
+      <label class="col-md-2" for="">Password:</label>
       <div class="col-md-4">
-        <input type="password" class="form-control rounded-0" placeholder="Confirm Password" name="confirm_password" [(ngModel)]="company.confirm_password">
+        <input type="password" class="form-control rounded-0" placeholder="Enter Password" name="password" [(ngModel)]="company.password">
       </div>
+
     </div>
     <div class="row pb-3">
       <label class="col-md-2" for="">Contact No:</label>
       <div class="col-md-4">
         <input type="text" class="form-control rounded-0" placeholder="Enter Contact No" name="contact_no" [(ngModel)]="company.contact_no">
+      </div>
+      <label class="col-md-2" for="">Confirm Password:</label>
+      <div class="col-md-4">
+        <input type="password" class="form-control rounded-0" placeholder="Confirm Password" name="confirm_password" [(ngModel)]="company.confirm_password">
       </div>
     </div>
     <div class="col-md-12 text-center pt-3 ">

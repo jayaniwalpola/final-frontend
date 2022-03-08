@@ -58,6 +58,7 @@ export class CompanyRegistrationComponent implements OnInit {
     fd.append('company_name',this.company.company_name);
     fd.append('profile_image',this.selectedFile,this.selectedFile.name);
     fd.append('address',this.company.address);
+    fd.append('description',this.company.description);
     fd.append('password',this.company.password);
     fd.append('email',this.company.email);
     fd.append('confirm_password',this.company.confirm_password);

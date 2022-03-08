@@ -3,6 +3,7 @@ export class CompanyRegister {
   profile_image:any;
   address:any;
   password:any;
+  description:any;
   email:any;
   confirm_password:any;
   contact_no:any;
