@@ -14,6 +14,9 @@ export class DataService {
   loginCompany(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/companyLogin',data);
   }
+  companyGet(data: any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/getCompany',data);
+  }
   channelGet(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/getChannel',data);
   }

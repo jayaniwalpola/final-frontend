@@ -1,8 +1,8 @@
 .main{
   background-color: rgba(90, 22, 90, 0.062);
   width: 100%;
-  height: 100%;
-  position:fixed;
+  height: auto;
+  position:absolute;
 }
 .search{
   margin-top: 200px;
@@ -12,5 +12,47 @@
   width: 700px;
   height: 50px;
 }
+.companyBox{
+background-color: white;
+width:900px;
+height:145px;
+margin-left: 400px;
+border:solid 1px rgba(0, 0, 0, 0.363);
+border-radius: 80px 80px 80px 80px;
+box-shadow: 2px 5px 10px #aaaaaa;
+}
+
+img{
+  max-height: 90%;
+}
+.company-details h1{
+  color: #421358;
+  font-weight: bold;
+}
+.company-details p{
+  color: #42135881;
+  font-weight: bold;
+
+}
+@media only screen and (max-width: 1000px) {
+
+  .search input{
+    border-radius: 50px 50px 50px 50px;
+    width: 600px;
+    height: 50px;
+  }
+  .companyBox{
+
+    width:700px;
+    height:145px;
+    margin-left: 65px;
+    border:solid 1px rgba(0, 0, 0, 0.363);
+    border-radius: 80px 80px 80px 80px;
+    box-shadow: 2px 5px 10px #aaaaaa;
+    }
+
+}
+
+
 
 
