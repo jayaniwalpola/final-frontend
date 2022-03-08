@@ -44,6 +44,7 @@ export class ChannelAddComponent implements OnInit {
    this.channelForm = new FormGroup({
      'channel_name'    :new FormControl(null,Validators.required),
      'description'     :new FormControl(null,Validators.required),
+     'summary'     :new FormControl(null,Validators.required),
 
    });
   }

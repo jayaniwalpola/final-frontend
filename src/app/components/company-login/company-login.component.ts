@@ -20,6 +20,7 @@ export class CompanyLoginComponent implements OnInit {
 
   company = new CompanyRegister();
   apiUrl = environment.backend_url;
+  // id: any;
 
 constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
 

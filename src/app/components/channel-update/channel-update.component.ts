@@ -35,15 +35,17 @@ export class ChannelUpdateComponent implements OnInit {
       this.channel =this.data ;
     });
   }
-  
+
   updateChannel(){
 
     const fd = new FormData();
     fd.append('channel_name',this.channel.channel_name);
     fd.append('description',this.channel.description);
+    fd.append('summary',this.channel.summary);
 
     console.log(this.channel.channel_name);
     console.log(this.channel.description);
+    console.log(this.channel.summary);
 
     this.http.put(this.apiUrl+'/channelUpdate/'+this.id,fd,{
       reportProgress:true,

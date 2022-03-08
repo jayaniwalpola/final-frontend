@@ -8,6 +8,7 @@ import { ChannelVacancyComponent } from './components/channel-vacancy/channel-va
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
 import { CompanyRegistrationComponent } from './components/company-registration/company-registration.component';
+import { JobseekerCompanyComponent } from './components/jobseeker-company/jobseeker-company.component';
 import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
 import { JobseekerRegistrationComponent } from './components/jobseeker-registration/jobseeker-registration.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'jobseekerCreate',component:JobseekerRegistrationComponent},
   {path:'jobseekerLogin',component:JobseekerLoginComponent},
   {path:'jobseekerDashboard',component:JobseekerDashboardComponent},
+  {path:'jobseekerCompany/:id',component:JobseekerCompanyComponent},
 ];
 
 @NgModule({
@@ -47,4 +49,5 @@ export const routingComponent =[MainHomeComponent,
                                 VacancyUpdateComponent,
                                 JobseekerRegistrationComponent,
                                 JobseekerLoginComponent,
-                                JobseekerDashboardComponent]
+                                JobseekerDashboardComponent,
+                                JobseekerCompanyComponent]

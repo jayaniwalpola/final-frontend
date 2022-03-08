@@ -15,9 +15,9 @@
     </div>
     <div class="col-12 col-lg-3  pb-4"  *ngFor = "let chann of channels">
       <div class="cardBox" routerLink="/channelVacancy/{{chann.id}}" >
-        <div class="sizeB p-4 pb-2 " >
+        <div class="sizeB p-2 pb-2 " >
           <h1 class="mt-4" >{{chann.channel_name}}</h1>
-          <!-- <p>{{chann.description}}</p> -->
+          <p style="line-height:30px;" >{{chann.summary}}</p>
         </div>
       </div>
     </div>

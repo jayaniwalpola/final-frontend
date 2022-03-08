@@ -1,0 +1,53 @@
+.main{
+  background-color: rgba(90, 22, 90, 0.062);
+  width: -webkit-fill-available;
+  height:100vh;
+  position:absolute;
+  overflow-x: hidden;
+}
+.topic{
+  margin-top:150px;
+  text-align: center;
+}
+.topic h1{
+  font-size:40px;
+  font-weight:500;
+  color:#510b72;
+}
+.topic p{
+  font-size:20px;
+  font-weight:500;
+  padding:20px;
+  /* width:800px; */
+  /* text-align:center; */
+  color:#510b7273;
+
+}
+.create-btn
+{
+  color:white;
+  font-weight: bold;
+  font-family: arial;
+  font-size:20px;
+  background-color:#391c46;
+  padding: 7px 40px;
+  border-radius: 50px;
+  float: right;
+
+}
+.box{
+  background-color:white;
+  width:400px;
+  height:250px;
+  border:solid 1px rgba(0, 0, 0, 0.363);
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 2px 5px 10px #aaaaaa;
+
+}
+
+
+.search input{
+  border-radius: 50px 50px 50px 50px;
+  width: 700px;
+  height: 50px;
+}
