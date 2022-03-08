@@ -1,0 +1,53 @@
+<app-company-navbar></app-company-navbar>
+<div id="sign-up-card">
+  <h1 class="pt-5 align-center">Create Account</h1>
+  <form class="p-5" name="registerCompany" (ngSubmit)="registerData()">
+    <div class="row pb-3">
+      <label class="col-md-2" for="">Name:</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-0" placeholder="Enter User Name" name="user_name" [(ngModel)]="jobseeker.user_name">
+      </div>
+      <label class="col-md-2" for="">Profile image:</label>
+      <div class="col-md-4">
+        <input type="file" id="customFile"  (change)="onfileSelected($event)" class="form-control rounded-0"  name="profile_image" [(ngModel)]="jobseeker.profile_image">
+        <span>
+          <small class="text-danger" >{{ file_errors}}</small>
+       </span>
+      </div>
+    </div>
+    <div class="row pb-3">
+      <label class="col-md-2" for="">Address:</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-0" placeholder="Enter User Address" name="address" [(ngModel)]="jobseeker.address" >
+      </div>
+      <label class="col-md-2" for="">Password:</label>
+      <div class="col-md-4">
+        <input type="password" class="form-control rounded-0" placeholder="Enter Password" name="password" [(ngModel)]="jobseeker.password">
+      </div>
+    </div>
+    <div class="row pb-3">
+      <label class="col-md-2" for="">Email:</label>
+      <div class="col-md-4">
+        <input type="email" class="form-control rounded-0" placeholder="Enter User Email" name="email" [(ngModel)]="jobseeker.email">
+      </div>
+      <label class="col-md-2" for="">Confirm Password:</label>
+      <div class="col-md-4">
+        <input type="password" class="form-control rounded-0" placeholder="Confirm Password" name="confirm_password" [(ngModel)]="jobseeker.confirm_password" >
+      </div>
+    </div>
+    <div class="row pb-3">
+      <label class="col-md-2" for="">Contact No:</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-0" placeholder="Enter Contact No" name="contact_no" [(ngModel)]="jobseeker.contact_no">
+      </div>
+    </div>
+    <div class="col-md-12 text-center pt-3 ">
+      <div >
+        <input class="btn create-btn shadow border border-dark" type="submit" value="Create">
+      </div>
+
+    </div>
+    <label class="col-md-12 text-center pt-2" for="">Already have an Account?<a routerLink="/jobseekerLogin" style="color:white;Font-weight:bold;">LOGIN</a></label>
+
+  </form>
+</div>

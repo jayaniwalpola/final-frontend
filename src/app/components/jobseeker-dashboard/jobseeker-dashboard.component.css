@@ -1,0 +1,16 @@
+.main{
+  background-color: rgba(90, 22, 90, 0.062);
+  width: 100%;
+  height: 100%;
+  position:fixed;
+}
+.search{
+  margin-top: 200px;
+}
+.search input{
+  border-radius: 50px 50px 50px 50px;
+  width: 700px;
+  height: 50px;
+}
+
+

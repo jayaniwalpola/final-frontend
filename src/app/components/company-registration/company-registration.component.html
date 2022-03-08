@@ -3,9 +3,9 @@
   <h1 class="pt-5 align-center">Create Account</h1>
   <form class="p-5" (ngSubmit)="registerData()" name="registerCompany">
     <div class="row pb-3">
-      <label class="col-md-2" for="">Name:</label>
+      <label class="col-md-2" for="">Company Name:</label>
       <div class="col-md-4">
-        <input type="text" class="form-control rounded-0" placeholder="Enter Name" name="company_name" [(ngModel)]="company.company_name">
+        <input type="text" class="form-control rounded-0" placeholder="Enter Company Name" name="company_name" [(ngModel)]="company.company_name">
       </div>
       <label class="col-md-2" for="">Profile image</label>
       <div class="col-md-4">
@@ -16,9 +16,9 @@
       </div>
     </div>
     <div class="row pb-3">
-      <label class="col-md-2" for="">Address:</label>
+      <label class="col-md-2" for="">Company Address:</label>
       <div class="col-md-4">
-        <input type="text" class="form-control rounded-0" placeholder="Enter  Address" name="address" [(ngModel)]="company.address">
+        <input type="text" class="form-control rounded-0" placeholder="Enter Company Address" name="address" [(ngModel)]="company.address">
       </div>
       <label class="col-md-2" for="">Password:</label>
       <div class="col-md-4">
@@ -26,9 +26,9 @@
       </div>
     </div>
     <div class="row pb-3">
-      <label class="col-md-2" for="">Email:</label>
+      <label class="col-md-2" for="">Company Email:</label>
       <div class="col-md-4">
-        <input type="email" class="form-control rounded-0" placeholder="Enter Email" name="email" [(ngModel)]="company.email">
+        <input type="email" class="form-control rounded-0" placeholder="Enter Company Email" name="email" [(ngModel)]="company.email">
       </div>
       <label class="col-md-2" for="">Confirm Password:</label>
       <div class="col-md-4">

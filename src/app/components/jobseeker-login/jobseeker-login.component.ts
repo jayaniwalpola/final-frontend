@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+import { JobSeeker } from 'src/app/job-seeker';
 import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
 
-import { Component, OnInit } from '@angular/core';
 import { CompanyRegister } from 'src/app/company-register';
 import { DataService } from 'src/app/service/data.service';
 import { environment } from 'src/environments/environment';
@@ -9,32 +10,37 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-company-login',
-  templateUrl: './company-login.component.html',
-  styleUrls: ['./company-login.component.css']
+  selector: 'app-jobseeker-login',
+  templateUrl: './jobseeker-login.component.html',
+  styleUrls: ['./jobseeker-login.component.css']
 })
-export class CompanyLoginComponent implements OnInit {
+export class JobseekerLoginComponent implements OnInit {
+
 
   isLogin = false;
   public redirectUrl :string | undefined;
 
-  company = new CompanyRegister();
+  jobseeker = new JobSeeker();
   apiUrl = environment.backend_url;
 
-constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
+
+
+  constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  loginCompany(){
+  loginUser(){
+
     const fd = new FormData();
-    fd.append('password',this.company.password);
-    fd.append('email',this.company.email);
 
-    console.log(this.company.password);
-    console.log(this.company.email);
+    fd.append('password',this.jobseeker.password);
+    fd.append('email',this.jobseeker.email);
 
-    this.http.post(this.apiUrl+'/CompanyLogin',fd,{
+    console.log(this.jobseeker.password);
+    console.log(this.jobseeker.email);
+
+    this.http.post(this.apiUrl+'/userLogin',fd,{
       reportProgress:true,
       observe:'events'
     }).subscribe((event: HttpEvent<any>) => {
@@ -52,12 +58,12 @@ constructor(private dataService: DataService,private http:HttpClient,private rou
           console.log(event);
           if(event.status == 200)
           {
-            this.router.navigate(['companydashboard']);
+            this.router.navigate(['jobseekerDashboard']);
           }
       }
 
 
   });
-}
+  }
 
 }

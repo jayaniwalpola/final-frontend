@@ -25,6 +25,9 @@ import { ChannelUpdateComponent } from './components/channel-update/channel-upda
 import { ChannelVacancyComponent } from './components/channel-vacancy/channel-vacancy.component';
 import { VacancyAddComponent } from './components/vacancy-add/vacancy-add.component';
 import { VacancyUpdateComponent } from './components/vacancy-update/vacancy-update.component';
+import { JobseekerRegistrationComponent } from './components/jobseeker-registration/jobseeker-registration.component';
+import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
+import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { VacancyUpdateComponent } from './components/vacancy-update/vacancy-upda
     ChannelUpdateComponent,
     ChannelVacancyComponent,
     VacancyAddComponent,
-    VacancyUpdateComponent
+    VacancyUpdateComponent,
+    JobseekerRegistrationComponent,
+    JobseekerLoginComponent,
+    JobseekerDashboardComponent
   ],
   imports: [
     BrowserModule,
