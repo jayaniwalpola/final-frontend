@@ -21,22 +21,64 @@
       </form>
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col-md-5">.col-md-4</div>
-    <div class="col-md-5">.col-md-4 .ml-auto</div>
-    <div class="col-md-5">.col-md-4</div>
-    <div class="col-md-5 ">.col-md-4 .ml-auto</div>
-    <div class="col-md-5">.col-md-4</div>
-    <div class="col-md-5 ">.col-md-4 .ml-auto</div>
 
-  </div> -->
   <div class="channel-list  " >
 
     <div class="d flex justify-content-center row">
 
 
 
-      <!-- <div class="box col-6 col-md-4 m-2" >
+      <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
+        <div class="topic-channel mt-5 ml-5 ">
+          <h1>{{detail.channel_name}}</h1>
+          <p>{{detail.summary}}</p>
+        </div>
+        <div class="sub-btn mt-5  pr-5">
+          <button class="btn create-btn shadow border border-dark">Subscribe</button>
+        </div>
+      </div>
+
+      <!-- <div class="box col-6 col-md-4 m-5" >
+        <div class="topic-channel mt-5 ml-5 ">
+          <h1>Channel name</h1>
+          <p>description</p>
+        </div>
+        <div class="sub-btn mt-5  pr-5">
+          <button class="btn create-btn shadow border border-dark">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="box col-6 col-md-4 m-5" >
+        <div class="topic-channel mt-5 ml-5 ">
+          <h1>Channel name</h1>
+          <p>description</p>
+        </div>
+        <div class="sub-btn mt-5  pr-5">
+          <button class="btn create-btn shadow border border-dark">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="box col-6 col-md-4 m-5" >
+        <div class="topic-channel mt-5 ml-5 ">
+          <h1>Channel name</h1>
+          <p>description</p>
+        </div>
+        <div class="sub-btn mt-5  pr-5">
+          <button class="btn create-btn shadow border border-dark">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="box col-6 col-md-4 m-5" >
+        <div class="topic-channel mt-5 ml-5 ">
+          <h1>Channel name</h1>
+          <p>description</p>
+        </div>
+        <div class="sub-btn mt-5  pr-5">
+          <button class="btn create-btn shadow border border-dark">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="box col-6 col-md-4 m-5" >
         <div class="topic-channel mt-5 ml-5 ">
           <h1>Channel name</h1>
           <p>description</p>
@@ -45,63 +87,6 @@
           <button class="btn create-btn shadow border border-dark">Subscribe</button>
         </div>
       </div> -->
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-      <div class="box col-6 col-md-3 m-5" >
-        <div class="topic-channel mt-5 ml-5 ">
-          <h1>Channel name</h1>
-          <p>description</p>
-        </div>
-        <div class="sub-btn mt-5  pr-5">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
-      </div>
-
-
 
 
     </div>

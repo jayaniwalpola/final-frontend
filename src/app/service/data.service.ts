@@ -47,4 +47,7 @@ export class DataService {
   vacancyEdit(id: any,data:any){
     return this.httpClient.put('http://127.0.0.1:8000/api/vacancyUpdate/'+id,data);
   }
+  vacancyChannelCompanyById(id:any,data:any) {
+    return this.httpClient.get('http://127.0.0.1:8000/api/getChannelCompany/'+id,data);
+  }
 }
