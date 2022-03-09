@@ -23,6 +23,14 @@
   color:#510b7273;
 
 }
+.topic-channel h1{
+  color:#490c66;
+  font-size:30px;
+}
+.topic-channel p{
+  color:#510b7273;
+  font-size:20px;
+}
 .create-btn
 {
   color:white;

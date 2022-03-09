@@ -1,13 +1,10 @@
 <app-company-navbar></app-company-navbar>
 <div class="main">
-  <div class="topic justify-content-center">
-    <h1>Company Name</h1>
-    <p class="pt-2 ">Company description vnefuive vnefuvirnsf v efuvsf vnuivnrs vnrwvuisw vnruisd vuivwr
-      pany description vnefuive vnefuvirnsf v efuvsf vnuivnrs vnrwvuisw vnruisd vuivwr vnwdvuwi v
-      pany description vnefuive vnefuvirnsf v efuvsf vnuivnrs vnrwvuisw vnruisd vuivwr vnwdvuwi vvnwdvuwi vrnwrdiv
-      pany description vnefuive vnefuvirnsf v efuvsf vnuivnrs vnrwvuisw vnruisd vuivwr vnwdvuwi v
-      pany description vnefuive vnefuvirnsf v efuvsf vnuivnrs vnrwvuisw vnruisd vuivwr vnwdvuwi v
-      </p>
+  <div class="topic justify-content-center" >
+
+    <h1   [(ngModel)]="company.company_name">{{company.company_name}}</h1>
+    <p class="pt-2 " ngDefaultControl [(ngModel)]="company.description">{{company.description}}</p>
+
   </div>
   <div class="search d-flex justify-content-center pt-5">
     <div class="topic mt-3">
@@ -33,7 +30,7 @@
           <h1>{{detail.channel_name}}</h1>
           <p>{{detail.summary}}</p>
         </div>
-        <div class="sub-btn mt-5  pr-5">
+        <div class="sub-btn col-lg-11 ">
           <button class="btn create-btn shadow border border-dark">Subscribe</button>
         </div>
       </div>
