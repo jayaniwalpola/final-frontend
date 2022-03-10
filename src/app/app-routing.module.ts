@@ -12,6 +12,7 @@ import { JobseekerCompanyComponent } from './components/jobseeker-company/jobsee
 import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
 import { JobseekerRegistrationComponent } from './components/jobseeker-registration/jobseeker-registration.component';
+import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacancy-dashboard/jobseeker-vacancy-dashboard.component';
 import { MainHomeComponent } from './components/main-home/main-home.component';
 import { VacancyAddComponent } from './components/vacancy-add/vacancy-add.component';
 import { VacancyUpdateComponent } from './components/vacancy-update/vacancy-update.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'jobseekerLogin',component:JobseekerLoginComponent},
   {path:'jobseekerDashboard',component:JobseekerDashboardComponent},
   {path:'jobseekerCompany/:id',component:JobseekerCompanyComponent},
+  {path:'jobseekerVacancyDashboard/:id',component:JobseekerVacancyDashboardComponent},
 ];
 
 @NgModule({
@@ -50,4 +52,5 @@ export const routingComponent =[MainHomeComponent,
                                 JobseekerRegistrationComponent,
                                 JobseekerLoginComponent,
                                 JobseekerDashboardComponent,
-                                JobseekerCompanyComponent]
+                                JobseekerCompanyComponent,
+                                JobseekerVacancyDashboardComponent]

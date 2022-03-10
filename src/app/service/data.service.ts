@@ -26,8 +26,8 @@ export class DataService {
   channelDelete(id:any){
     return this.httpClient.delete('http://127.0.0.1:8000/api/channelDelete/'+id);
   }
-  channelGetDataById(id:any){
-    return this.httpClient.get('http://127.0.0.1:8000/api/getChannelById/'+id);
+  channelGetDataById(id:any,data:any){
+    return this.httpClient.get('http://127.0.0.1:8000/api/getChannelById/'+id,data);
   }
   channelEdit(id: any,data:any){
     return this.httpClient.put('http://127.0.0.1:8000/api/channelUpdate/'+id,data);

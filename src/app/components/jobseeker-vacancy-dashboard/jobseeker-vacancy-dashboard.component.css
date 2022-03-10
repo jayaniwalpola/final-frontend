@@ -1,0 +1,86 @@
+.main{
+  background-color: rgba(90, 22, 90, 0.062);
+  width: -webkit-fill-available;
+  height:100vh;
+  position:absolute;
+  overflow-x: hidden;
+}
+.topic{
+  margin-top:150px;
+  text-align: center;
+}
+.topic h1{
+  font-size:40px;
+  font-weight:500;
+  color:#510b72;
+}
+.topic p{
+  font-size:20px;
+  font-weight:500;
+  padding:20px;
+  color:#510b7273;
+
+}
+.search input{
+  border-radius: 50px 50px 50px 50px;
+  width: 700px;
+  height: 50px;
+}
+.tableDiv{
+  margin-top: 150px;
+}
+
+.borderless td, .borderless th {
+  border: none;
+}
+.st{
+  border-collapse:separate;
+  border-spacing: 0px;
+  border:solid black 1px;
+  border-radius:20px;
+  width: 1000px;
+  margin-left: 350px;
+  margin-top: -150px;
+  font-size: 20px;
+  text-align: center;
+
+}
+.st th {
+  background-color:#36084b ;
+  border-top: none;
+  border: 0px;
+  padding:20px 5px 20px 5px;
+  color:white;
+  font-weight: 500;
+}
+.st td{
+  color:#510b7273;
+ font-weight: 500;
+}
+.st td:first-child,.st th:first-child {
+   border-left: none;
+}
+.vacListTop{
+  color:#391c47;
+  font-weight: bold;
+  font-size:25px;
+}
+tr{
+  line-height:40px;
+}
+@media only screen and (max-width: 1000px) {
+  .st{
+    border-collapse:separate;
+    border-spacing: 0px;
+    border:solid black 1px;
+    border-radius:20px;
+    width: 750px;
+    margin-left: 50px;
+    font-size: 20px;
+  }
+
+  .colorupdate{
+    color: red;
+
+  }
+}

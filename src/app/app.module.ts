@@ -29,6 +29,7 @@ import { JobseekerRegistrationComponent } from './components/jobseeker-registrat
 import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
 import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 import { JobseekerCompanyComponent } from './components/jobseeker-company/jobseeker-company.component';
+import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacancy-dashboard/jobseeker-vacancy-dashboard.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { JobseekerCompanyComponent } from './components/jobseeker-company/jobsee
     JobseekerRegistrationComponent,
     JobseekerLoginComponent,
     JobseekerDashboardComponent,
-    JobseekerCompanyComponent
+    JobseekerCompanyComponent,
+    JobseekerVacancyDashboardComponent
   ],
   imports: [
     BrowserModule,

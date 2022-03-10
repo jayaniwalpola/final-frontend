@@ -29,7 +29,7 @@ export class ChannelUpdateComponent implements OnInit {
   }
 
   getChannel(){
-    this.dataService.channelGetDataById(this.id).subscribe(res =>{
+    this.dataService.channelGetDataById(this.id,this.data).subscribe(res =>{
       // console.log(res);
       this.data =res;
       this.channel =this.data ;

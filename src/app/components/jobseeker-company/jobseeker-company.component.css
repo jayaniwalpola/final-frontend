@@ -18,8 +18,6 @@
   font-size:20px;
   font-weight:500;
   padding:20px;
-  /* width:800px; */
-  /* text-align:center; */
   color:#510b7273;
 
 }
@@ -43,6 +41,20 @@
   float: right;
 
 }
+.sub-btn{
+  margin-right:50px;
+  margin-top: 45px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .sub-btn{
+    /* text-align: center; */
+    margin-top: 10px;
+    margin-left:100px;
+    margin-bottom:2px;
+    color: black;
+  }
+}
 .box{
   background-color:white;
   width:400px;
@@ -52,8 +64,6 @@
   box-shadow: 2px 5px 10px #aaaaaa;
 
 }
-
-
 .search input{
   border-radius: 50px 50px 50px 50px;
   width: 700px;

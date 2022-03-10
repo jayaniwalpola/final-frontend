@@ -2,7 +2,7 @@
 <div class="main">
   <div class="topic justify-content-center" >
 
-    <h1   [(ngModel)]="company.company_name">{{company.company_name}}</h1>
+    <h1 ngDefaultControl  [(ngModel)]="company.company_name">{{company.company_name}}</h1>
     <p class="pt-2 " ngDefaultControl [(ngModel)]="company.description">{{company.description}}</p>
 
   </div>
@@ -26,13 +26,17 @@
 
 
       <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
-        <div class="topic-channel mt-5 ml-5 ">
+        <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
+            <div class="topic-channel mt-5 ml-5 " >
           <h1>{{detail.channel_name}}</h1>
           <p>{{detail.summary}}</p>
         </div>
-        <div class="sub-btn col-lg-11 ">
+        <div class="sub-btn">
           <button class="btn create-btn shadow border border-dark">Subscribe</button>
         </div>
+
+        </div>
+
       </div>
 
       <!-- <div class="box col-6 col-md-4 m-5" >
