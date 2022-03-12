@@ -1,30 +1,23 @@
 <app-company-navbar></app-company-navbar>
 <div class="main">
   <div class="topic justify-content-center">
-    <h1>Vacancy Name</h1>
+    <h1 ngDefaultControl [(ngModel)]="vacancy.vacancy_name">{{ vacancy.vacancy_name}}</h1>
   </div>
   <div class="details-box d-flex justify-content-center mt-5 mb-5 ">
 
     <div class="vac-details">
      <div>
-       <h1>Description</h1>
-       <p>vfefvv ncdiscnw ncdisvns</p>
+       <h1 >Description(Responsibilities and other details)</h1>
+       <p ngDefaultControl [(ngModel)]="vacancy.vacancy_des">{{vacancy.vacancy_des}}</p>
      </div>
      <div>
        <h1>Requirements</h1>
-       <p>cnsdivjks vndsuvidws vndsvcnsdivjks vndsuvidws vndsv
-        cnsdivj
+       <p ngDefaultControl [(ngModel)]="vacancy.requirement">{{ vacancy.requirement}}
      </div>
+
      <div>
-       <h1>Responsibilities</h1>
-       <p>dsvcn cnewdvdsvcn cnewdvncw nsdviuwnvncw nsdviuwnv
-       dsvcn cnewdvncw nsdviuwnv
-       dsvcn cnewdvncw nsdviuwnvdsvcn cnewdvncw nsdviuwnvdsvcn cnewdvncw
-       nsdviuwnvdsvcn cnewdvncw nsdviuwnv</p>
-     </div>
-     <div>
-       <h1>Skills</h1>
-       <p>cewicew cbewcibwe cbwdivswd</p>
+       <h1 >Skills</h1>
+       <p ngDefaultControl [(ngModel)]="vacancy.skills">{{ vacancy.skills}}</p>
      </div>
     </div>
 

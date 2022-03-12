@@ -70,3 +70,20 @@ font-size: 20px;
   padding: 6px 10px;
 
 }
+@media only screen and (max-width: 1000px) {
+  .details-box{
+   width:750px;
+   margin-left:50px;
+
+  }
+  .form-vac{
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 1000px;
+}
+.vac-details{
+  padding-right: 30px;
+
+  padding-left: 30px;
+}
+}
