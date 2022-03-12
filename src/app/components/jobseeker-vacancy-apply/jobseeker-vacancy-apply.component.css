@@ -15,7 +15,7 @@
   color:#510b72;
 }
 .vac-details{
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0, 0, 0, 0.473);
   /* height: 400px; */
   margin-top: 50px;
   margin-bottom: 50px;
@@ -31,13 +31,25 @@
   padding-right: 100px;
   padding-top: 100px;
   padding-bottom: 100px;
+  width: 1000px;
+}
+.form-vac {
+font-weight: 500;
+font-size: 20px;
 }
 .details-box{
+  color: #3d0457;
  background-color:white;
  width:1000px;
  height:auto;
- /* position: absolute; */
+ border: 0.5px solid rgba(0, 0, 0, 0.438);
  margin-left:350px;
+ border-radius: 5%;
+
+}
+.details-box h1 {
+  font-weight:500;
+font-size: 20px;
 
 }
 .create-btn
