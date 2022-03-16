@@ -14,6 +14,7 @@ export class CompanyNavbarComponent implements OnInit {
   // let item = JSON.parse(localStorage.getItem('id'));
   item:any;
   id: any;
+  comName: any;
   data:any;
   company = new CompanyRegister();
   isLoggedIn = false;
@@ -22,17 +23,22 @@ export class CompanyNavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.item =localStorage.getItem('id');
+    this.comName =localStorage.getItem('company_name');
     // console.log(localStorage.getItem('id'));
     this.getNav();
 
   }
   getNav(){
-    this.dataService.comGetById(this.item,this.data).subscribe(res =>{
-      // console.log(res);
-      this.data =res;
-      this.company =this.data ;
-      this.isLoggedIn = true;
-    });
+    if(localStorage.getItem("company_name") !== null)
+    {
+      this.dataService.comGetById(this.item,this.data).subscribe(res =>{
+        // console.log(res);
+        this.data =res;
+        this.company =this.data ;
+        this.isLoggedIn = true;
+      });
+    }
+
 
 
   }

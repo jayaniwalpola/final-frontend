@@ -63,11 +63,11 @@ constructor(private dataService: DataService,private http:HttpClient,private rou
           localStorage.setItem('id', event.body.user.id);
           localStorage.setItem('company_name', event.body.user.company_name);
           localStorage.setItem('profile_image', event.body.user.profile_image);
-          this.item = localStorage.getItem('id');
-          localStorage.getItem('company_name');
-          localStorage.getItem('profile_image');
+          // localStorage.getItem('id');
+          // localStorage.getItem('company_name');
+          // localStorage.getItem('profile_image');
 
-          console.log(this.item);
+          // console.log(this.item);
 
 
       }
