@@ -16,6 +16,7 @@ export class CompanyNavbarComponent implements OnInit {
   id: any;
   data:any;
   company = new CompanyRegister();
+  isLoggedIn = false;
 
   constructor(private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
 
@@ -30,6 +31,7 @@ export class CompanyNavbarComponent implements OnInit {
       // console.log(res);
       this.data =res;
       this.company =this.data ;
+      this.isLoggedIn = true;
     });
 
 
