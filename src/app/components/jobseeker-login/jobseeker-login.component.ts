@@ -24,7 +24,6 @@ export class JobseekerLoginComponent implements OnInit {
   apiUrl = environment.backend_url;
 
 
-
   constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {

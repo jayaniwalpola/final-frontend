@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-sidenav',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanySidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    // this.id  = this.route.snapshot.params.id;
+  }
+  logOut() {
+
+    localStorage.removeItem('id');
+    localStorage.removeItem('company_name');
+    localStorage.removeItem('profile_image');
+    localStorage.clear()
+    this.router.navigate(['']);
+
+
   }
 
 }

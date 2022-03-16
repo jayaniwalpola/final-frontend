@@ -20,7 +20,8 @@ export class CompanyLoginComponent implements OnInit {
 
   company = new CompanyRegister();
   apiUrl = environment.backend_url;
-  // id: any;
+  id: any;
+  item:any;
 
 constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
 
@@ -51,10 +52,24 @@ constructor(private dataService: DataService,private http:HttpClient,private rou
           break;
         case HttpEventType.Response:
           console.log(event);
+          // console.log(event.body.user.id);
+
           if(event.status == 200)
           {
-            this.router.navigate(['companydashboard']);
+            this.router.navigate(['companydashboard/']);
           }
+
+
+          localStorage.setItem('id', event.body.user.id);
+          localStorage.setItem('company_name', event.body.user.company_name);
+          localStorage.setItem('profile_image', event.body.user.profile_image);
+          this.item = localStorage.getItem('id');
+          localStorage.getItem('company_name');
+          localStorage.getItem('profile_image');
+
+          console.log(this.item);
+
+
       }
 
 

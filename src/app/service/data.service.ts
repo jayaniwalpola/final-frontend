@@ -17,11 +17,14 @@ export class DataService {
   companyGet(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/getCompany',data);
   }
-  channelGet(data: any){
-    return this.httpClient.post('http://127.0.0.1:8000/api/getChannel',data);
+  comGetById(id: any,data:any){
+    return this.httpClient.get('http://127.0.0.1:8000/api/getCompanyById/'+id,data);
   }
-  channelAdd(data: any){
-    return this.httpClient.post('http://127.0.0.1:8000/api/channelAdd',data);
+  channelGet(id:any,data: any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/getChannel/'+id,data);
+  }
+  channelAdd(id: any,data: any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/channelAdd/'+id,data);
   }
   channelDelete(id:any){
     return this.httpClient.delete('http://127.0.0.1:8000/api/channelDelete/'+id);

@@ -28,14 +28,14 @@ export class ChannelAddComponent implements OnInit {
   channelForm = new FormGroup({});
   selected_channel_response:any = [];
   myForm:FormGroup | undefined;
-
-
-
+  item:any;
 
   constructor(private dataService: DataService,private dialog:MatDialog ,private modalService: NgbModal,private router:Router,private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
+  this.item = localStorage.getItem('id');
+
     this.getChannel();
   }
 
@@ -51,16 +51,16 @@ export class ChannelAddComponent implements OnInit {
 
 
   getChannel(){
-    this.dataService.channelGet(data).subscribe(res=>{
+    this.dataService.channelGet(this.item,data).subscribe(res=>{
       this.channels=res;
     });
   }
 
 
-  addChannel(channelF:NgForm){
-    // console.log(this.channel);
-    this.dataService.channelAdd(this.channel).subscribe(res=>{
+  addChannel(item:any,channelF:NgForm){
+    this.dataService.channelAdd(item,this.channel).subscribe(res=>{
       this.getChannel();
+      // console.log(res);
     });
   channelF.reset()
 

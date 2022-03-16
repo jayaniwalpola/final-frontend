@@ -12,15 +12,22 @@ export class ChannelHomeComponent implements OnInit {
   channels: any;
   data: any;
   channel = new Channel();
+  item:any;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+  this.item = localStorage.getItem('id');
+  // console.log(localStorage.getItem('id'));
+
+
     this.getChannel();
+    // console.log(response.user.id);
   }
   getChannel(){
-    this.dataService.channelGet(this.data).subscribe(res=>{
+    this.dataService.channelGet(this.item,this.data).subscribe(res=>{
       this.channels=res;
+      // console.log(res);
     });
   }
 
