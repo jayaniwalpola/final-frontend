@@ -1,5 +1,5 @@
 <header>
-  <div class="navbar nav-bar-company shadow-sm">
+  <!-- <div class="navbar nav-bar-company shadow-sm">
     <div class="navbar-brand align-item-center d-flex ml-5">
       <img src="../../../assets/img/logo.png" alt="" style="max-width: 80%;">
     </div>
@@ -16,6 +16,24 @@
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3" routerLink="/companylogin">login</a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="navbar nav-bar-company shadow-sm">
+    <div class="navbar-brand align-item-center d-flex ml-5">
+      <img src="../../../assets/img/logo.png" alt="" style="max-width: 80%;">
+    </div>
+    <div>
+      <ul class="nav mr-5">
+
+        <li class="nav-item">
+          <p class="nav-link mr-3 com-name"  [(ngModel)]="company.company_name"  ngDefaultControl> {{company.company_name}}</p>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link mr-3 mt-1 col-lg-3 pro-img" >
+            <img [(ngModel)]="company.profile_image"  src="http://127.0.0.1:8000/storage/company_images/{{company.profile_image}}" alt="">
+          </a>
         </li>
       </ul>
     </div>
