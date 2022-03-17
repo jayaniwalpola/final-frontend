@@ -20,6 +20,9 @@ export class DataService {
   comGetById(id: any,data:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/getCompanyById/'+id,data);
   }
+  jobGetById(id: any,data:any){
+    return this.httpClient.get('http://127.0.0.1:8000/api/getJobSeekerById/'+id,data);
+  }
   channelGet(id:any,data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/getChannel/'+id,data);
   }
