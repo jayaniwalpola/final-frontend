@@ -29,4 +29,13 @@
   height: 50px;
   object-fit: cover;
 }
-
+.color-drop{
+  color:#421358;
+  font-family: arial,sans-serif;
+  font-weight:bold;
+  font-size:18px;
+  /* padding:10px; */
+}
+a{
+  cursor: pointer;
+}

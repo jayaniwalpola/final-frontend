@@ -62,6 +62,16 @@ export class CompanyNavbarComponent implements OnInit {
 
 
   }
+  logOut() {
+
+    localStorage.removeItem('id');
+    localStorage.removeItem('user_name');
+    localStorage.removeItem('profile_image');
+    localStorage.clear()
+    this.router.navigate(['']);
+
+
+  }
 
 
 
