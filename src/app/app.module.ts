@@ -9,7 +9,9 @@ import { CompanyNavbarComponent } from './components/company-navbar/company-navb
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { CompanySidenavComponent } from './components/company-sidenav/company-sidenav.component';
 import { ChannelHomeComponent } from './components/channel-home/channel-home.component';
@@ -31,6 +33,7 @@ import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jo
 import { JobseekerCompanyComponent } from './components/jobseeker-company/jobseeker-company.component';
 import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacancy-dashboard/jobseeker-vacancy-dashboard.component';
 import { JobseekerVacancyApplyComponent } from './components/jobseeker-vacancy-apply/jobseeker-vacancy-apply.component';
+import { CompanyCreateExamsComponent } from './components/company-create-exams/company-create-exams.component';
 
 
 @NgModule({
@@ -53,12 +56,14 @@ import { JobseekerVacancyApplyComponent } from './components/jobseeker-vacancy-a
     JobseekerDashboardComponent,
     JobseekerCompanyComponent,
     JobseekerVacancyDashboardComponent,
-    JobseekerVacancyApplyComponent
+    JobseekerVacancyApplyComponent,
+    CompanyCreateExamsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     AppRoutingModule,
     NgbModule,

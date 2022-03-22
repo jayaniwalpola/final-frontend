@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
 import { combineLatest } from 'rxjs';
 import { Router, RouterModule,Routes } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-company-registration',
@@ -22,12 +24,29 @@ export class CompanyRegistrationComponent implements OnInit {
   progress:any; //
   ProgressBar :any;
   upalod_status_message:any =[];
+  CompanyForm = new FormGroup({});
 
+  com_data:any = localStorage.getItem('company_name');
   apiUrl = environment.backend_url;
 
   constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+  }
+  CheckValidations () {
+
+    this.CompanyForm = new FormGroup({
+      company_name : new FormControl(this.com_data, Validators.maxLength(15)),
+      // lastname  : new FormControl(this.user_data.lastname,  Validators.maxLength(15)),
+      // email     : new FormControl(this.user_data.email,     [Validators.required, Validators.email]),
+
+
+    });
+
+    // this.PasswordForm = new FormGroup ({
+    //   current_password  : new FormControl(null,  Validators.required),
+    //   new_password      : new FormControl(null, [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')]),
+    // })
   }
 
 
@@ -98,6 +117,8 @@ export class CompanyRegistrationComponent implements OnInit {
         }
 
       }
+      // console.log(event.status);
+
 
     });
     this.router.navigateByUrl("companylogin");

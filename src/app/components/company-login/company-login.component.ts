@@ -5,7 +5,7 @@ import { CompanyRegister } from 'src/app/company-register';
 import { DataService } from 'src/app/service/data.service';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
-
+import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,10 +23,19 @@ export class CompanyLoginComponent implements OnInit {
   id: any;
   item:any;
 
-constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
+// public loginCompanyForm!:FormGroup
+// loginCompanyForm = new FormGroup({});
+
+
+constructor(private formBuilder:FormBuilder, private dataService: DataService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+    // this.loginCompanyForm = this.formBuilder.group({
+    //   email:['',Validators.required],
+    //   password:['',Validators.required]
+    // })
   }
+
 
   loginCompany(){
     const fd = new FormData();
