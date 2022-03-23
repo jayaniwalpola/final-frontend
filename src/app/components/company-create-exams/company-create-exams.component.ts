@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-company-create-exams',
@@ -7,13 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyCreateExamsComponent implements OnInit {
 
-  constructor() { }
+  vacancies: any;
+  data: any;
+  item:any;
+
+
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.item =localStorage.getItem('id');
+    // console.log(this.item);
+    this.getVac();
+
   }
   getVac()
   {
-    
+    this.dataService.vacancyGetByComID(this.item,this.data).subscribe(res=>{
+      this.vacancies=res;
+      // console.log(res);
+    });
   }
 
 }

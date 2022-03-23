@@ -41,6 +41,9 @@ export class DataService {
   vacancyGet(id: any,data:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/geVacancyById/'+id,data);
   }
+  vacancyGetByComID(id: any,data:any){
+    return this.httpClient.get('http://127.0.0.1:8000/api/getVacByCompanyId/'+id,data);
+  }
   vacancyDelete(id:any){
     return this.httpClient.delete('http://127.0.0.1:8000/api/vacancyDelete/'+id);
   }

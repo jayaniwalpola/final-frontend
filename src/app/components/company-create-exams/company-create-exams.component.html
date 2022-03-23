@@ -14,10 +14,7 @@
           <div class="col-8 w-100">
 
             <select class="form-control">
-              <option>Vacancy 1</option>
-              <option>Vacancy 2</option>
-              <option>vacancy 3</option>
-              <option>Vacancy 4</option>
+              <option *ngFor="let vac of vacancies" [ngValue]="vac">{{vac.vacancy_name}}</option>
             </select>
           </div>
         </div>
