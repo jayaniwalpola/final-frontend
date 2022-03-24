@@ -5,26 +5,40 @@
     <p class="addChan mb-5" style="text-align: center">Create Exam</p>
     <p class="createjobtopic col-4"></p>
     <div class="channelformadd">
-      <form class="formchannel"  >
+      <form class="formchannel" (ngSubmit)="addExam()" >
 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">
           <label for="vacancyName">Realated Vacancy Name:</label>
           </div>
           <div class="col-8 w-100">
-
-            <select class="form-control">
-              <option *ngFor="let vac of vacancies" [ngValue]="vac">{{vac.vacancy_name}}</option>
+            <!-- <select >
+              <option value="0">--All--</option>
+              <op *ngFor="let vac of vacancies" value={{vac.id}}>
+                {{vac.vacancy_name}}
+              </op
+            </select> -->
+            <select class="form-control"  [(ngModel)]="exam.related_vac" >
+              <option *ngFor="let vac of vacancies" [value]="1" >{{vac.vacancy_name}}</option>
             </select>
           </div>
         </div>
+        <!-- <div class="form-group d-flex flex-row justify-content-center">
+          <div class="col-4">
+          <label for="q1">Question  101:</label>
+          </div>
+          <div class="col-8 w-100">
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="exam.related_vac"  >
+
+          </div>
+        </div> -->
 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">
           <label for="q1">Question  1:</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="exam.Q1"  >
 
           </div>
         </div>
@@ -34,7 +48,7 @@
           <label for="q2">Question  2:</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="exam.Q2"  >
 
           </div>
         </div>
@@ -44,7 +58,7 @@
           <label for="q3">Question  3:</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="exam.Q3" >
 
           </div>
         </div>
@@ -54,7 +68,7 @@
           <label for="q4">Question  4:</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="exam.Q4"   >
 
           </div>
         </div>
@@ -64,7 +78,7 @@
           <label for="q5">Question  5:</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="exam.Q5" >
 
           </div>
         </div>
@@ -74,7 +88,7 @@
           <label for="q6">Question  6:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   >
+            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q6" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>
@@ -84,7 +98,7 @@
           <label for="q7">Question  7:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   >
+            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8" [(ngModel)]="exam.Q7" [ngModelOptions]="{standalone: true}"  >
             </textarea>
           </div>
         </div>
@@ -94,7 +108,7 @@
           <label for="q8">Question  8:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   >
+            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   [(ngModel)]="exam.Q8" [ngModelOptions]="{standalone: true}">
             </textarea>
           </div>
         </div>
@@ -104,7 +118,7 @@
           <label for="q9">Question  9:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   >
+            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q9" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>
@@ -114,7 +128,7 @@
           <label for="q10">Question  10:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   >
+            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q10" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>

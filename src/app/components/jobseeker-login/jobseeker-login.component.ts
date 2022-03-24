@@ -60,9 +60,9 @@ export class JobseekerLoginComponent implements OnInit {
             this.router.navigate(['jobseekerDashboard']);
           }
 
-          localStorage.setItem('id', event.body.user.id);
-          localStorage.setItem('user_name', event.body.user.user_name);
-          localStorage.setItem('profile_image', event.body.user.profile_image);
+          sessionStorage.setItem('id', event.body.user.id);
+          sessionStorage.setItem('user_name', event.body.user.user_name);
+          sessionStorage.setItem('profile_image', event.body.user.profile_image);
           // localStorage.getItem('profile_image');
       }
 

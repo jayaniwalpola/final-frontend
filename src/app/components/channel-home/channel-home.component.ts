@@ -17,7 +17,7 @@ export class ChannelHomeComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-  this.item = localStorage.getItem('id');
+  this.item = sessionStorage.getItem('id');
   // console.log(localStorage.getItem('id'));
 
 

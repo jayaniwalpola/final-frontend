@@ -34,7 +34,7 @@ export class ChannelAddComponent implements OnInit {
 
 
   ngOnInit(): void {
-  this.item = localStorage.getItem('id');
+  this.item = sessionStorage.getItem('id');
 
     this.getChannel();
   }

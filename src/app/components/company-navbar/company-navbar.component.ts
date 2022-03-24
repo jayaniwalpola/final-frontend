@@ -26,15 +26,15 @@ export class CompanyNavbarComponent implements OnInit {
   constructor(private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
-    this.item =localStorage.getItem('id');
-    this.comName =localStorage.getItem('company_name');
-    this.jobName =localStorage.getItem('user_name');
+    this.item =sessionStorage.getItem('id');
+    this.comName =sessionStorage.getItem('company_name');
+    this.jobName =sessionStorage.getItem('user_name');
     // console.log(localStorage.getItem('id'));
     this.getNav();
 
   }
   getNav(){
-    if(localStorage.getItem("company_name") !== null)
+    if(sessionStorage.getItem("company_name") !== null)
     {
       this.dataService.comGetById(this.item,this.data).subscribe(res =>{
         // console.log(res);
@@ -44,7 +44,7 @@ export class CompanyNavbarComponent implements OnInit {
         // this.isComLoggedIn = true;
       });
     }
-    if(localStorage.getItem("user_name") !== null){
+    if(sessionStorage.getItem("user_name") !== null){
 
       this.dataService.jobGetById(this.item,this.data).subscribe(res =>{
         // console.log(res);
@@ -64,10 +64,10 @@ export class CompanyNavbarComponent implements OnInit {
   }
   logOut() {
 
-    localStorage.removeItem('id');
-    localStorage.removeItem('user_name');
-    localStorage.removeItem('profile_image');
-    localStorage.clear()
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('user_name');
+    sessionStorage.removeItem('profile_image');
+    sessionStorage.clear()
     this.router.navigate(['']);
 
 

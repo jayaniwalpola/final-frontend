@@ -15,10 +15,10 @@ export class CompanySidenavComponent implements OnInit {
   }
   logOut() {
 
-    localStorage.removeItem('id');
-    localStorage.removeItem('company_name');
-    localStorage.removeItem('profile_image');
-    localStorage.clear()
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('company_name');
+    sessionStorage.removeItem('profile_image');
+    sessionStorage.clear()
     this.router.navigate(['']);
 
 

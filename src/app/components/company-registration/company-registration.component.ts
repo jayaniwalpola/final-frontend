@@ -26,7 +26,7 @@ export class CompanyRegistrationComponent implements OnInit {
   upalod_status_message:any =[];
   CompanyForm = new FormGroup({});
 
-  com_data:any = localStorage.getItem('company_name');
+  com_data:any = sessionStorage.getItem('company_name');
   apiUrl = environment.backend_url;
 
   constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }

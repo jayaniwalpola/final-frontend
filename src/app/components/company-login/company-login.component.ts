@@ -68,9 +68,9 @@ constructor(private formBuilder:FormBuilder, private dataService: DataService,pr
             this.router.navigate(['companydashboard/']);
           }
 
-          localStorage.setItem('id', event.body.user.id);
-          localStorage.setItem('company_name', event.body.user.company_name);
-          localStorage.setItem('profile_image', event.body.user.profile_image);
+          sessionStorage.setItem('id', event.body.user.id);
+          sessionStorage.setItem('company_name', event.body.user.company_name);
+          sessionStorage.setItem('profile_image', event.body.user.profile_image);
 
       }
 

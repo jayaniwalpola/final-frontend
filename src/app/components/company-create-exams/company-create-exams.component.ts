@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Exam } from 'src/app/exam';
 import { DataService } from 'src/app/service/data.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-company-create-exams',
@@ -11,15 +13,19 @@ export class CompanyCreateExamsComponent implements OnInit {
   vacancies: any;
   data: any;
   item:any;
+  exam = new Exam();
+  selected: any;
+  examform = new FormGroup({});
 
 
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.item =localStorage.getItem('id');
+    this.item =sessionStorage.getItem('id');
     // console.log(this.item);
     this.getVac();
+    // this.selected=1;
 
   }
   getVac()
@@ -28,6 +34,9 @@ export class CompanyCreateExamsComponent implements OnInit {
       this.vacancies=res;
       // console.log(res);
     });
+  }
+  addExam(){
+    console.log(this.exam);
   }
 
 }
