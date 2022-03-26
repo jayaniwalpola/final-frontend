@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,12 @@ import {HttpClient} from '@angular/common/http';
 export class DataService {
 
   constructor(private httpClient: HttpClient) { }
+  getDropDownText(id:any, object:any){
+    const selObj = _.filter(object, function (o) {
+        return (_.includes(id,o.id));
+    });
+    return selObj;
+  }
 
   registerData(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/companyRegister',data);

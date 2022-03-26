@@ -12,26 +12,15 @@
           <label for="vacancyName">Realated Vacancy Name:</label>
           </div>
           <div class="col-8 w-100">
-            <!-- <select >
-              <option value="0">--All--</option>
-              <op *ngFor="let vac of vacancies" value={{vac.id}}>
-                {{vac.vacancy_name}}
-              </op
-            </select> -->
-            <select class="form-control"  [(ngModel)]="exam.related_vac" >
-              <option *ngFor="let vac of vacancies" [value]="1" >{{vac.vacancy_name}}</option>
-            </select>
-          </div>
-        </div>
-        <!-- <div class="form-group d-flex flex-row justify-content-center">
-          <div class="col-4">
-          <label for="q1">Question  101:</label>
-          </div>
-          <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="exam.related_vac"  >
+            <select class="form-control" name="my-select" [(ngModel)]="mySelect" (change)="selectChange()">
+              <option value="2">--Select--</option>
+              <option [value]="item.id" *ngFor="let item of vacancies">
+                  {{item.vacancy_name}}
+              </option>
+          </select>
 
           </div>
-        </div> -->
+        </div>
 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">
