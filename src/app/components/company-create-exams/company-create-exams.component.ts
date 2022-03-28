@@ -18,9 +18,32 @@ export class CompanyCreateExamsComponent implements OnInit {
 
 
   mySelect = '2';
+  mySelect2 = '2';
   selectedValue: any;
+  selectedValue2: any;
 
+  level = [
+    {
+      id: 1,
+      name: 'Internship Level',
 
+    },
+    {
+      id: 2,
+      name: 'Associate Level',
+
+    },
+    {
+      id: 3,
+      name: 'Junior Level',
+
+    },
+    {
+      id: 4,
+      name: 'Senior Level',
+
+    },
+  ];
 
   vacancies: any;
   data: any;
@@ -43,9 +66,14 @@ export class CompanyCreateExamsComponent implements OnInit {
     // this.selected=1;
 
   }
+  selectChange2() {
+    this.selectedValue2 = this.dataService.getDropDownText(this.mySelect, this.level)[0].name;
+}
   selectChange() {
     this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.vacancies)[0].id
   }
+
+
 
   getVac()
   {
@@ -57,6 +85,7 @@ export class CompanyCreateExamsComponent implements OnInit {
   addExam(){
     const fd = new FormData();
     fd.append('related_vac',this.selectedValue);
+    fd.append('level',this.selectedValue2);
     fd.append('Q1',this.exam.Q1);
     fd.append('Q2',this.exam.Q2);
     fd.append('Q3',this.exam.Q3);

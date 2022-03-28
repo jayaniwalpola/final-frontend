@@ -1,5 +1,6 @@
 export class Exam {
   related_vac:any;
+  level:any;
   Q1:any;
   Q2:any;
   Q3:any;

@@ -18,10 +18,38 @@
                   {{item.vacancy_name}}
               </option>
           </select>
-
           </div>
         </div>
 
+
+        <!-- <select name="my-select" [(ngModel)]="mySelect" (change)="selectChange2()">
+          <option [value]="item.id" *ngFor="let item of level">
+              {{item.name}}
+          </option>
+      </select>
+
+
+      <h4>Selected Values</h4>
+
+      <div>
+          Selected: {{selectedValue}}
+      </div> -->
+        <div class="form-group d-flex flex-row justify-content-center">
+          <div class="col-4">
+          <label for="vacancyName">Exam Category:</label>
+          </div>
+          <div class="col-8 w-100">
+            <select class="form-control"name="my-select" [(ngModel)]="mySelect" (change)="selectChange2()">
+              <option value="2">--Select--</option>
+              <option [value]="item.id" *ngFor="let item of level">
+                  {{item.name}}
+              </option>
+          </select>
+          </div>
+        </div>
+        <div>
+          Selected: {{selectedValue2 }}
+      </div> 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">
           <label for="q1">Question  1:</label>
@@ -77,7 +105,7 @@
           <label for="q6">Question  6:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q6" [ngModelOptions]="{standalone: true}" >
+            <textarea    class="form-control"   cols="40" rows="8"  [(ngModel)]="exam.Q6" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>
@@ -87,7 +115,7 @@
           <label for="q7">Question  7:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8" [(ngModel)]="exam.Q7" [ngModelOptions]="{standalone: true}"  >
+            <textarea    class="form-control"  cols="40" rows="8" [(ngModel)]="exam.Q7" [ngModelOptions]="{standalone: true}"  >
             </textarea>
           </div>
         </div>
@@ -97,7 +125,7 @@
           <label for="q8">Question  8:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"   [(ngModel)]="exam.Q8" [ngModelOptions]="{standalone: true}">
+            <textarea    class="form-control"  cols="40" rows="8"   [(ngModel)]="exam.Q8" [ngModelOptions]="{standalone: true}">
             </textarea>
           </div>
         </div>
@@ -107,7 +135,7 @@
           <label for="q9">Question  9:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q9" [ngModelOptions]="{standalone: true}" >
+            <textarea    class="form-control"  cols="40" rows="8"  [(ngModel)]="exam.Q9" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>
@@ -117,7 +145,7 @@
           <label for="q10">Question  10:</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control" placeholder="Enter Vacancy Description"  cols="40" rows="8"  [(ngModel)]="exam.Q10" [ngModelOptions]="{standalone: true}" >
+            <textarea    class="form-control"   cols="40" rows="8"  [(ngModel)]="exam.Q10" [ngModelOptions]="{standalone: true}" >
             </textarea>
           </div>
         </div>

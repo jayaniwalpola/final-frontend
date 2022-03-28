@@ -14,6 +14,12 @@ export class DataService {
     });
     return selObj;
   }
+  // getDropDownText2(id:any, object:any){
+  //   const selObj2 = _.filter(object, function (o) {
+  //       return (_.includes(id,o.id));
+  //   });
+  //   return selObj2;
+  // }
 
   registerData(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/companyRegister',data);
