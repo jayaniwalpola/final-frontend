@@ -73,8 +73,6 @@ export class CompanyCreateExamsComponent implements OnInit {
     this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.vacancies)[0].id
   }
 
-
-
   getVac()
   {
     this.dataService.vacancyGetByComID(this.item,this.data).subscribe(res=>{
@@ -99,6 +97,7 @@ export class CompanyCreateExamsComponent implements OnInit {
 
 
     console.log(this.selectedValue);
+    console.log(this.selectedValue2);
     console.log(this.exam.Q1);
     console.log(this.exam.Q2);
     console.log(this.exam.Q3);
@@ -133,10 +132,6 @@ export class CompanyCreateExamsComponent implements OnInit {
           }
       }
     })
-
-    // this.dataService.channelEdit(this.id,this.channel).subscribe(res =>{
-
-    // })
   }
 
 }

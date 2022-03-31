@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute ,Router} from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 import { Vacancy } from 'src/app/vacancy';
+import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
+import { JobApplier } from 'src/app/job-applier';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-jobseeker-vacancy-apply',
@@ -13,8 +17,36 @@ export class JobseekerVacancyApplyComponent implements OnInit {
   id: any;
   data: any;
   vacancy = new Vacancy();
+  jobApplier = new JobApplier();
+  apiUrl = environment.backend_url;
 
-  constructor(private route:ActivatedRoute,private dataService: DataService) { }
+  level = [
+    {
+      id: 1,
+      name: 'Internship Level',
+
+    },
+    {
+      id: 2,
+      name: 'Associate Level',
+
+    },
+    {
+      id: 3,
+      name: 'Junior Level',
+
+    },
+    {
+      id: 4,
+      name: 'Senior Level',
+
+    },
+  ];
+
+  mySelect = '2';
+  selectedValue: any;
+
+  constructor(private route:ActivatedRoute,private dataService: DataService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -22,6 +54,10 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     // console.log(this.route.snapshot.params.id);
 
   }
+  selectChange() {
+    this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.level)[0].name;
+}
+
   getData(){
     this.dataService.vacancyGetById(this.id).subscribe(res => {
       // console.log(res);
@@ -29,6 +65,49 @@ export class JobseekerVacancyApplyComponent implements OnInit {
       this.vacancy = this.data;
     })
   }
+  addExam(){
+    const fd = new FormData();
+
+    fd.append('Name',this.jobApplier.Name);
+    fd.append('Job_Category_Level',this.selectedValue);
+    fd.append('Phone_no',this.jobApplier.Phone_no);
+
+    console.log(this.jobApplier.Name);
+    console.log(this.selectedValue);
+    console.log(this.jobApplier.Phone_no);
+
+
+
+
+
+    this.http.post(this.apiUrl+'/jobApplierAdd/'+this.id,fd,{
+      reportProgress:true,
+      observe:'events'
+
+    }).subscribe((event:HttpEvent<any>) =>{
+      switch (event.type){
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+        break;
+        case HttpEventType.Response:
+        console.log(event);
+        if(event.status == 200)
+          {
+            this.router.navigate(['/examPage/'+this.id]);
+          }
+          sessionStorage.setItem('Job_Category_Level', event.body.Job_Category_Level);
+
+      }
+
+    })
+
+  }
+
 
 
 }

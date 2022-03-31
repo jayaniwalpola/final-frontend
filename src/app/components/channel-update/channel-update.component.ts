@@ -33,6 +33,7 @@ export class ChannelUpdateComponent implements OnInit {
       // console.log(res);
       this.data =res;
       this.channel =this.data ;
+      console.log(this.channel);
     });
   }
 

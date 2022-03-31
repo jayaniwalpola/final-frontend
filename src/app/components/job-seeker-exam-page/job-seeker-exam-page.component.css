@@ -1,0 +1,56 @@
+.main{
+  background-color: rgba(90, 22, 90, 0.062);
+  width: -webkit-fill-available;
+  height:100vh;
+  position:absolute;
+  overflow-x: hidden;
+  text-align:center;
+}
+.addChan{
+  text-align: left;
+  font-size:25px;
+  color:rgb(82, 32, 82);
+  font-weight:bold;
+
+}
+
+.formchannel{
+  text-align: left;
+  font-size:20px;
+
+  color:#42135885;
+  font-weight:bold;
+}
+.channelformadd{
+  width:800px;
+}
+.create-btn
+{
+  color:white;
+  font-weight: bold;
+  font-family: arial;
+  font-size:20px;
+  background-color:#4a255c;
+  padding: 8px 50px;
+  border-radius: 50px;
+  float: right;
+}
+
+.formDiv{
+  padding-left: 450px;
+  width: 100%;
+  margin-top: 10%;
+  text-align:center;
+}
+@media only screen and (max-width: 1000px) {
+
+  .main {
+    margin-left: 370px; /* Same as the width of the sidenav */
+  }
+
+  .colorupdate{
+    color: red;
+
+  }
+}
+

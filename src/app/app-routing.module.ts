@@ -9,6 +9,7 @@ import { CompanyCreateExamsComponent } from './components/company-create-exams/c
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
 import { CompanyRegistrationComponent } from './components/company-registration/company-registration.component';
+import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/job-seeker-exam-page.component';
 import { JobseekerCompanyComponent } from './components/jobseeker-company/jobseeker-company.component';
 import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:'jobseekerVacancyDashboard/:id',component:JobseekerVacancyDashboardComponent},
   {path:'jobseekerVacancyApply/:id',component:JobseekerVacancyApplyComponent},
   {path:'examCreate',component:CompanyCreateExamsComponent},
+  {path:'examPage/:id',component:JobSeekerExamPageComponent},
 ];
 
 @NgModule({
@@ -59,4 +61,5 @@ export const routingComponent =[MainHomeComponent,
                                 JobseekerCompanyComponent,
                                 JobseekerVacancyDashboardComponent,
                                 JobseekerVacancyApplyComponent,
-                                CompanyCreateExamsComponent]
+                                CompanyCreateExamsComponent,
+                                JobSeekerExamPageComponent]

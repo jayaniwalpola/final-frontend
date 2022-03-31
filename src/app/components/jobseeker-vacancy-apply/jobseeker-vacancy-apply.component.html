@@ -23,28 +23,35 @@
 
     <div class="form-vac">
       <div>
-        <form class="formchannel " >
+        <form class="formchannel "   (ngSubmit)="addExam()">
           <div class="form-group">
             <label for="name">Full Name:</label>
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="jobApplier.Name">
           </div>
-          <div class="form-group">
-            <label for="channelname">Level:</label>
-            <select class="form-control">
-              <option>Internship level</option>
-              <option>Associate Level</option>
-              <option>Junior level</option>
-              <option>Senior level</option>
-            </select>
+          <div class="form-group" >
+          <label for="channelname">Level:</label>
+
+          <select class="form-control" name="my-select" [(ngModel)]="mySelect" (change)="selectChange()">
+            <option value="2">--Select--</option>
+
+            <option [value]="item.id" *ngFor="let item of level">
+                {{item.name}}
+            </option>
+          </select>
           </div>
+
+
           <div class="form-group">
             <label for="contact">Contact No:</label>
-            <input type="text" name="contact" id="contact" class="form-control"  >
+            <input type="text" name="contact" id="contact" class="form-control"   [(ngModel)]="jobApplier.Phone_no">
           </div>
           <div class="btnCreate col-12 pr-0 d-flex justify-content-between">
-            <div class=" m-2">
-              <input class="btn create-btn shadow border border-dark b1  " type="submit" value="Face Exam">
-            </div>
+
+              <div class=" m-2">
+                <input class="btn create-btn shadow border border-dark b1" type="submit" value="Face Exam" >
+              </div>
+
+
             <div class="m-2">
               <input class="btn create-btn shadow border border-dark b2" type="submit" value="Shedule an Exam">
             </div>
