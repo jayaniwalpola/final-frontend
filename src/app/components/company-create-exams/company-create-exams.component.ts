@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Answer } from 'src/app/answer';
 
 
 
@@ -49,6 +50,7 @@ export class CompanyCreateExamsComponent implements OnInit {
   data: any;
   item:any;
   exam = new Exam();
+  ans = new Answer();
   selected: any;
   examform = new FormGroup({});
   apiUrl = environment.backend_url;
@@ -63,7 +65,7 @@ export class CompanyCreateExamsComponent implements OnInit {
     this.item =sessionStorage.getItem('id');
     // console.log(this.item);
     this.getVac();
-    // this.selected=1;
+    this.addAns();
 
   }
   selectChange2() {
@@ -132,6 +134,59 @@ export class CompanyCreateExamsComponent implements OnInit {
           }
       }
     })
+  }
+  addAns(){
+    // console.log("lov");
+    const fd = new FormData();
+    // fd.append('related_vac',this.selectedValue);
+    fd.append('A1',this.ans.A1);
+    fd.append('A2',this.ans.A2);
+    fd.append('A3',this.ans.A3);
+    fd.append('A4',this.ans.A4);
+    fd.append('A5',this.ans.A5);
+    fd.append('A6',this.ans.A6);
+    fd.append('A7',this.ans.A7);
+    fd.append('A8',this.ans.A8);
+    fd.append('A9',this.ans.A9);
+    fd.append('A10',this.ans.A10);
+
+    console.log(this.ans.A1);
+    console.log(this.ans.A2);
+    console.log(this.ans.A3);
+    console.log(this.ans.A4);
+    console.log(this.ans.A5);
+    console.log(this.ans.A6);
+    console.log(this.ans.A7);
+    console.log(this.ans.A8);
+    console.log(this.ans.A9);
+    console.log(this.ans.A10);
+
+    this.http.post(this.apiUrl+'/ansAdd/'+this.selectedValue,fd,{
+      reportProgress:true,
+      observe:'events'
+
+    }).subscribe((event:HttpEvent<any>) =>{
+      switch (event.type){
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+        break;
+        case HttpEventType.Response:
+        console.log(event);
+        if(event.status == 200)
+          {
+            this.router.navigate(['companydashboard']);
+          }
+      }
+    })
+
+
+
+
   }
 
 }
