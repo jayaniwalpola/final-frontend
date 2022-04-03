@@ -5,14 +5,14 @@
   <div class="formDiv ">
     <p class="createjobtopic col-4 addChan mb-5">Answer All Questions</p>
     <div class="channelformadd ">
-      <form class="formchannel mb-5 " >
+      <form class="formchannel mb-5 " (ngSubmit)="checkAns()">
 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">
           <p ngDefaultControl [(ngModel)]="exam.Q1">{{exam.Q1}}</p>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userAns.UA1" >
           </div>
         </div>
 
@@ -21,7 +21,7 @@
             <p ngDefaultControl [(ngModel)]="exam.Q2" [ngModelOptions]="{standalone: true}">{{exam.Q2}}</p>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control" >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userAns.UA2"  >
           </div>
         </div>
 
@@ -30,7 +30,7 @@
             <label ngDefaultControl [(ngModel)]="exam.Q3">{{exam.Q3}}</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"  >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userAns.UA3"   >
           </div>
         </div>
 
@@ -39,7 +39,7 @@
             <label ngDefaultControl [(ngModel)]="exam.Q4" [ngModelOptions]="{standalone: true}">{{exam.Q4}}</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control" >
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userAns.UA4" >
           </div>
         </div>
 
@@ -48,7 +48,7 @@
           <label ngDefaultControl [(ngModel)]="exam.Q5" [ngModelOptions]="{standalone: true}">{{exam.Q5}}</label>
           </div>
           <div class="col-8 w-100">
-            <input type="text" name="name" id="name" class="form-control"   >
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA5"  >
           </div>
         </div>
 
@@ -57,8 +57,8 @@
             <label ngDefaultControl [(ngModel)]="exam.Q6" [ngModelOptions]="{standalone: true}">{{exam.Q6}}</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control"   cols="40" rows="8"   >
-            </textarea>
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA6"  >
+
           </div>
         </div>
 
@@ -67,8 +67,8 @@
             <label ngDefaultControl [(ngModel)]="exam.Q7" [ngModelOptions]="{standalone: true}">{{exam.Q7}}</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control"  cols="40" rows="8"  >
-            </textarea>
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA7"  >
+
           </div>
         </div>
 
@@ -77,8 +77,8 @@
             <label ngDefaultControl [(ngModel)]="exam.Q8" [ngModelOptions]="{standalone: true}">{{exam.Q8}}</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control"  cols="40" rows="8"   >
-            </textarea>
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA8"  >
+
           </div>
         </div>
 
@@ -87,8 +87,8 @@
             <label ngDefaultControl [(ngModel)]="exam.Q9" [ngModelOptions]="{standalone: true}">{{exam.Q9}}</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control"  cols="40" rows="8"   >
-            </textarea>
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA9"  >
+
           </div>
         </div>
 
@@ -97,13 +97,12 @@
             <label ngDefaultControl [(ngModel)]="exam.Q10" [ngModelOptions]="{standalone: true}">{{exam.Q10}}</label>
           </div>
           <div class="col-8 w-100">
-            <textarea    class="form-control"   cols="40" rows="8"   >
-            </textarea>
+            <input type="text" name="name" id="name" class="form-control"  [(ngModel)]="userAns.UA10"  >
           </div>
         </div>
 
         <div class="btnCreate col-12 pr-0 ">
-          <input class="btn create-btn shadow border border-dark mb-3 " type="submit" value="Create">
+          <input class="btn create-btn shadow border border-dark mb-3 " type="submit" value="Submit">
         </div>
       </form>
     </div>

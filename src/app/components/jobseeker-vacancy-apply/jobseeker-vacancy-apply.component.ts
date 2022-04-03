@@ -45,6 +45,8 @@ export class JobseekerVacancyApplyComponent implements OnInit {
 
   mySelect = '2';
   selectedValue: any;
+  msg:any;
+  buttonEnable =false;
 
   constructor(private route:ActivatedRoute,private dataService: DataService,private http:HttpClient,private router:Router) { }
 
@@ -52,7 +54,13 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.getData();
     // console.log(this.route.snapshot.params.id);
+    // this.msg =sessionStorage.getItem('message');
 
+    //     if(this.msg == "Pass")
+    //       {
+    //         // console.log("jey");
+    //         this.buttonEnable = true;
+    //       }
   }
   selectChange() {
     this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.level)[0].name;
@@ -75,9 +83,6 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     console.log(this.jobApplier.Name);
     console.log(this.selectedValue);
     console.log(this.jobApplier.Phone_no);
-
-
-
 
 
     this.http.post(this.apiUrl+'/jobApplierAdd/'+this.id,fd,{
