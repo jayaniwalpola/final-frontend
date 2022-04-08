@@ -29,7 +29,7 @@ export class JobSeekerExamPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.level =sessionStorage.getItem('Job_Category_Level');
-
+ console.warn(this.level);
     this.getDataExam();
     // console.log(this.route.snapshot.params.id);
   }
@@ -110,11 +110,7 @@ export class JobSeekerExamPageComponent implements OnInit {
         if(event.status == 200)
         {
           console.log(event.body.message);
-          // if(event.body.message == "Pass")
-          // {
-          //   // console.log("jey");
-          //   this.buttonEnable = true;
-          // }
+
           sessionStorage.setItem('message', event.body.message);
 
           this.router.navigate(['jobseekerVacancyApply/'+this.id]);

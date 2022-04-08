@@ -54,13 +54,13 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.getData();
     // console.log(this.route.snapshot.params.id);
-    // this.msg =sessionStorage.getItem('message');
+    this.msg = sessionStorage.getItem('message');
 
-    //     if(this.msg == "Pass")
-    //       {
-    //         // console.log("jey");
-    //         this.buttonEnable = true;
-    //       }
+        // if(this.msg == "Pass")
+        //   {
+        //     console.log("jey");
+        //     // this.buttonEnable = true;
+        //   }
   }
   selectChange() {
     this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.level)[0].name;
