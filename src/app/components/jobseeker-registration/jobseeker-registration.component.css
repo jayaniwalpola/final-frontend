@@ -1,9 +1,10 @@
 #sign-up-card{
-  /* position: relative; */
-  margin: 110px 80px 80px 80px;
+  position: fixed;
+  margin: 180px 80px 80px 80px;
   color:rgba(255, 251, 255, 0.849);
   background-color: #391c46ad;
   font-size: 20px;
+  width:1539px;
 }
 h1{
   text-align: center;

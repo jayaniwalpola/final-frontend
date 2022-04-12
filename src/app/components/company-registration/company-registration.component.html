@@ -1,15 +1,15 @@
 <app-company-navbar></app-company-navbar>
+
 <div id="sign-up-card">
   <h1 class="pt-5 align-center">Create Account</h1>
-  <form class="p-5" (ngSubmit)="registerData()" name="registerCompany" [formGroup]="CompanyForm">
+  <form class="p-5" (ngSubmit)="registerData()" name="registerCompany" >
     <div class="row pb-3">
       <label class="col-md-2" for="">Company Name:</label>
       <div class="col-md-4">
-        <input type="text" class="form-control rounded-0" formControlName="company_name"  [class.is-invalid]="CompanyForm.get('company_name')?.dirty && CompanyForm.get('company_name')?.invalid"
-        [class.is-valid]="CompanyForm.get('company_name')?.dirty && CompanyForm.get('company_name')?.valid" placeholder="Enter Company Name" name="company_name" [(ngModel)]="company.company_name">
-        <span class="w-100 text-left" *ngIf="CompanyForm.get('company_name')?.invalid && CompanyForm.get('company_name')?.errors">
+        <input type="text" class="form-control rounded-0"   placeholder="Enter Company Name" name="company_name" [(ngModel)]="company.company_name">
+        <!-- <span class="w-100 text-left" *ngIf="CompanyForm.get('company_name')?.invalid && CompanyForm.get('company_name')?.errors">
           <small class="text-danger"  *ngIf="CompanyForm.get('company_name')?.hasError('maxlength')">Maximum 15 characters</small>
-        </span>
+        </span> -->
       </div>
       <label class="col-md-2" for="">Profile image</label>
       <div class="col-md-4">
