@@ -1,32 +1,55 @@
 <app-company-navbar></app-company-navbar>
 <div class="main ">
-  
+
   <div class="search d-flex justify-content-center">
     <div class="topic mt-3">
       <i class="fas fa-search" style="font-size:20px;color:#421358;"></i>
     </div>
     <div class="search-box">
-      <form  name="search">
+      <!-- <form  name="search" (ngSubmit)="searc()" > -->
             <div class="col-md-12">
-              <input type="email" class="form-control" placeholder="Search companies here" name="search" >
+              <input type="text" class="form-control" #box  (keyup.enter)="searchValue(box.value)" placeholder="Search companies here" name="search" >
             </div>
-      </form>
+      <!-- </form> -->
     </div>
   </div>
   <div>
 
   </div>
-  <div *ngFor = "let com of companies">
-    <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{com.id}}">
 
-      <div class="company-details mt-4 ml-5 pl-4 pt-2 ">
-        <h1>{{com.company_name}}</h1>
-        <p>Company description</p>
-      </div>
-      <div class="company-img mt-2 mr-5 pr-5 col-lg-3">
-        <img src="http://127.0.0.1:8000/storage/company_images/{{com.profile_image}}" alt="" >
+  <div *ngIf="!search; else content" >
+    <div *ngFor = "let com of companies" >
+      <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{com.id}}">
+
+        <div class="company-details mt-4 ml-5 pl-4 pt-2 ">
+          <h1>{{com.company_name}}</h1>
+          <p>Company description</p>
+        </div>
+        <div class="company-img mt-2 mr-5 pr-5 col-lg-3">
+          <img src="http://127.0.0.1:8000/storage/company_images/{{com.profile_image}}" alt="" >
+        </div>
       </div>
     </div>
   </div>
+
+  <ng-template #content>
+    <ng-container  *ngIf="search">
+       <div *ngFor = "let comp of searchResults"   >
+      <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{comp.id}}">
+
+        <div class="company-details mt-4 ml-5 pl-4 pt-2 ">
+          <h1>{{comp.company_name}}</h1>
+          <p>Company description</p>
+        </div>
+        <div class="company-img mt-2 mr-5 pr-5 col-lg-3">
+          <img src="http://127.0.0.1:8000/storage/company_images/{{comp.profile_image}}" alt="" >
+        </div>
+      </div>
+    </div>
+    </ng-container>
+    
+  </ng-template>
+
+
 
 </div>

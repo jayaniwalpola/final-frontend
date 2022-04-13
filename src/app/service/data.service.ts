@@ -14,10 +14,6 @@ export class DataService {
     });
     return selObj;
   }
-  // getData(data: any){
-  //   return this.httpClient.post('http://127.0.0.1:8000/api/companyRegister',data);
-  // }
-
   registerData(data: any){
     return this.httpClient.post('http://127.0.0.1:8000/api/companyRegister',data);
   }
@@ -72,5 +68,9 @@ export class DataService {
 
   comGet(id: any,data:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/getCompanyById/'+id,data);
+  }
+  searchValue(value:any){
+    return this.httpClient.get('http://127.0.0.1:8000/api/searchCompany/'+value);
+
   }
 }
