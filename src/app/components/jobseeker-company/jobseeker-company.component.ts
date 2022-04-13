@@ -40,5 +40,9 @@ export class JobseekerCompanyComponent implements OnInit {
       // this.getVacancy();
     })
   }
+  subscribe(){
+
+    console.log("subscribe jayai");
+  }
 
 }

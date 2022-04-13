@@ -1,4 +1,8 @@
 <app-company-navbar></app-company-navbar>
+
+
+
+
 <div class="main">
   <div class="topic justify-content-center" >
 
@@ -25,19 +29,23 @@
 
 
 
-      <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
-        <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
+        <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
+          <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
             <div class="topic-channel mt-5 ml-5 " >
-          <h1>{{detail.channel_name}}</h1>
-          <p>{{detail.summary}}</p>
-        </div>
-        <div class="sub-btn">
-          <button class="btn create-btn shadow border border-dark">Subscribe</button>
-        </div>
+              <h1>{{detail.channel_name}}</h1>
+              <p>{{detail.summary}}</p>
+            </div>
+
+
+          </div>
+          <div class="sub-btn">
+            <form (ngSubmit)="subscribe()">
+              <input type="hidden" value="{{detail.id}}">
+              <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
+            </form>
+          </div>
 
         </div>
-
-      </div>
 
 
 
@@ -46,3 +54,5 @@
 
   </div>
 </div>
+
+
