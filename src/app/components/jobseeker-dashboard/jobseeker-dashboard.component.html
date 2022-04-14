@@ -17,7 +17,7 @@
 
   </div>
 
-  <div *ngIf="!search; else content" >
+  <div *ngIf="view" >
     <div *ngFor = "let com of companies" >
       <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{com.id}}">
 
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <ng-template #content>
+  <!-- <ng-template #content> -->
     <ng-container  *ngIf="search">
        <div *ngFor = "let comp of searchResults"   >
       <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{comp.id}}">
@@ -47,8 +47,8 @@
       </div>
     </div>
     </ng-container>
-    
-  </ng-template>
+
+  <!-- </ng-template> -->
 
 
 

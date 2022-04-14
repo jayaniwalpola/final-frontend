@@ -11,6 +11,7 @@ export class JobseekerDashboardComponent implements OnInit {
 
   companies: any;
   data: any;
+  view:boolean =false;
   search: boolean = false;
   company = new CompanyRegister();
   All:boolean=false;
@@ -27,20 +28,27 @@ export class JobseekerDashboardComponent implements OnInit {
   getCompany(){
     this.dataService.companyGet(this.data).subscribe(res=>{
       console.log(res);
-      this.All = true;
+      // this.All = true;
+      this.view=true;
       this.companies=res;
     });
   }
   searchValue(value:any){
     console.log(value)
-    this.search=true;
 
-    // this.All=true;
-    this.dataService.searchValue(value).subscribe(res =>{
-      console.log(res);
-      this.searchResults = res;
+    if(value==""){
+      this.getCompany();
+      this.search = false;
+    }else{
+      this.dataService.searchValue(value).subscribe(res =>{
+        console.log(res);
+        this.search=true;
+        this.view=false;
+        this.searchResults = res;
 
-    })
+      })
+    }
+
 
 
   }
