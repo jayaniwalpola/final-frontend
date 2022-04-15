@@ -1,8 +1,5 @@
 <app-company-navbar></app-company-navbar>
 
-
-
-
 <div class="main">
   <div class="topic justify-content-center" >
 
@@ -15,44 +12,58 @@
       <i class="fas fa-search" style="font-size:20px;color:#421358;"></i>
     </div>
     <div class="search-box mb-5">
-      <form  name="search">
             <div class="col-md-12">
-              <input type="email" class="form-control" placeholder="Search channels here" name="search" >
+              <form  (keyup.enter)="searchValue(box.value)" >
+                <input type="text" class="form-control" #box   placeholder="Search channels here" name="search" >
+              </form>
             </div>
-      </form>
     </div>
   </div>
 
-  <div class="channel-list  " >
-
+  <div class="channel-list " *ngIf="view"   >
     <div class="d flex justify-content-center row">
-
-
-
-        <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
-          <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
-            <div class="topic-channel mt-5 ml-5 " >
-              <h1>{{detail.channel_name}}</h1>
-              <p>{{detail.summary}}</p>
+          <div class="box col-6 col-md-4 m-5" *ngFor="let detail of companyChannels">
+            <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
+              <div class="topic-channel mt-5 ml-5 " >
+                <h1>{{detail.channel_name}}</h1>
+                <p>{{detail.summary}}</p>
+              </div>
             </div>
 
-
+            <div class="sub-btn">
+              <form (ngSubmit)="subscribe()">
+                <input type="hidden" value="{{detail.id}}">
+                <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
+              </form>
+            </div>
           </div>
-          <div class="sub-btn">
-            <form (ngSubmit)="subscribe()">
-              <input type="hidden" value="{{detail.id}}">
-              <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
-            </form>
-          </div>
-
-        </div>
-
-
-
     </div>
-
-
   </div>
+    <ng-container  *ngIf="search">
+
+      <div class="channel-list "  >
+        <div class="d flex justify-content-center row">
+              <div class="box col-6 col-md-4 m-5" *ngFor="let detail of searchResults">
+                <div routerLink="/jobseekerVacancyDashboard/{{detail.id}}">
+                  <div class="topic-channel mt-5 ml-5 " >
+                    <h1>{{detail.channel_name}}</h1>
+                    <p>{{detail.summary}}</p>
+                  </div>
+                </div>
+
+                <div class="sub-btn">
+                  <form (ngSubmit)="subscribe()">
+                    <input type="hidden" value="{{detail.id}}">
+                    <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
+                  </form>
+                </div>
+              </div>
+        </div>
+      </div>
+    </ng-container>
+
+
+
 </div>
 
 

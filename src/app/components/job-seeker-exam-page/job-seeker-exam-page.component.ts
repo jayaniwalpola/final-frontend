@@ -29,7 +29,7 @@ export class JobSeekerExamPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.level =sessionStorage.getItem('Job_Category_Level');
- console.warn(this.level);
+//  console.warn(this.level);
     this.getDataExam();
     // console.log(this.route.snapshot.params.id);
   }

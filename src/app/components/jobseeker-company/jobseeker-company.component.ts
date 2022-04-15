@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyRegister } from 'src/app/company-register';
 import { DataService } from 'src/app/service/data.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -17,6 +18,12 @@ export class JobseekerCompanyComponent implements OnInit {
   company = new CompanyRegister();
   companyChannels:any;
   companies:any;
+  view:boolean =false;
+  search: boolean = false;
+  searchResults:any;
+  apiUrl = environment.backend_url;
+
+
 
   constructor(private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
 
@@ -28,6 +35,7 @@ export class JobseekerCompanyComponent implements OnInit {
   getchan(){
     this.dataService.vacancyChannelCompanyById(this.id,this.data).subscribe(res =>{
       // console.log(res);
+      this.view =true;
       this.companyChannels = res;
     });
   }
@@ -37,12 +45,66 @@ export class JobseekerCompanyComponent implements OnInit {
       // console.log(res);
       this.data =res;
       this.company =this.data ;
-      // this.getVacancy();
+
     })
   }
   subscribe(){
 
     console.log("subscribe jayai");
+  }
+  searchValue(value:any){
+
+    this.search =true;
+    this.view = false;
+    const fd = new FormData();
+
+    fd.append('search',value);
+    console.log(value);
+
+    this.http.post(this.apiUrl+'/searchChannel/'+this.id,fd,{
+      reportProgress:true,
+      observe:'events'
+    }).subscribe((event: HttpEvent<any>) => {
+      switch (event.type) {
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+
+          break;
+        case HttpEventType.Response:
+          console.log(event.body);
+          this.searchResults = event.body;
+
+      }
+
+
+  });
+
+    // console.log(value);
+    // console.log(this.id);
+    // this.view=false;
+
+
+
+
+    // if(value=="")
+    // {
+    //   this.getchan();
+    //   this.search = false;
+    // }
+    // else
+    // {
+      // this.dataService.searchChannel(this.id,value).subscribe(res =>{
+      //   console.log(res);
+      //   this.search=true;
+        // this.searchResults = res;
+
+      // })
+    // }
   }
 
 }

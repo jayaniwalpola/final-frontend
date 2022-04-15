@@ -6,15 +6,10 @@
       <i class="fas fa-search" style="font-size:20px;color:#421358;"></i>
     </div>
     <div class="search-box">
-      <!-- <form  name="search" (ngSubmit)="searc()" > -->
-            <div class="col-md-12">
-              <input type="text" class="form-control" #box  (keyup.enter)="searchValue(box.value)" placeholder="Search companies here" name="search" >
-            </div>
-      <!-- </form> -->
+      <div class="col-md-12">
+        <input type="text" class="form-control" #box  (keyup.enter)="searchValue(box.value)" placeholder="Search companies here" name="search" >
+      </div>
     </div>
-  </div>
-  <div>
-
   </div>
 
   <div *ngIf="view" >
@@ -32,7 +27,7 @@
     </div>
   </div>
 
-  <!-- <ng-template #content> -->
+
     <ng-container  *ngIf="search">
        <div *ngFor = "let comp of searchResults"   >
       <div class="companyBox d-flex   justify-content-between mt-5"  routerLink="/jobseekerCompany/{{comp.id}}">
@@ -48,7 +43,7 @@
     </div>
     </ng-container>
 
-  <!-- </ng-template> -->
+
 
 
 

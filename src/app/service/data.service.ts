@@ -71,6 +71,8 @@ export class DataService {
   }
   searchValue(value:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/searchCompany/'+value);
-
+  }
+  searchChannel(id:any,value:any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/searchChannel/'+id,value);
   }
 }
