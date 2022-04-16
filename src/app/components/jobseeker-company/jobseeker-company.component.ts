@@ -56,6 +56,7 @@ export class JobseekerCompanyComponent implements OnInit {
 
     this.search =true;
     this.view = false;
+
     const fd = new FormData();
 
     fd.append('search',value);
@@ -84,27 +85,6 @@ export class JobseekerCompanyComponent implements OnInit {
 
   });
 
-    // console.log(value);
-    // console.log(this.id);
-    // this.view=false;
-
-
-
-
-    // if(value=="")
-    // {
-    //   this.getchan();
-    //   this.search = false;
-    // }
-    // else
-    // {
-      // this.dataService.searchChannel(this.id,value).subscribe(res =>{
-      //   console.log(res);
-      //   this.search=true;
-        // this.searchResults = res;
-
-      // })
-    // }
   }
 
 }

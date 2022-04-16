@@ -13,7 +13,9 @@
     <div class="search-box mb-5">
       <form  name="search">
             <div class="col-md-12">
-              <input type="email" class="form-control" placeholder="Search vacancies here" name="search" >
+              <form  (keyup.enter)="searchValue(box.value)" >
+                <input type="text" class="form-control" #box   placeholder="Search channels here" name="search" >
+              </form>
             </div>
       </form>
     </div>
@@ -29,11 +31,27 @@
           <th style="border-radius: 0px 15px 0 0;">Details</th>
       </tr>
       </thead>
-      <tr *ngFor="let vac of vacancies">
+      <tbody *ngIf="view" >
+        <tr *ngFor="let vac of vacancies"  >
           <td>{{vac.vacancy_name}}</td>
           <td>{{vac.experience}}</td>
           <td><a routerLink="/jobseekerVacancyApply/{{vac.id}}">Apply</a></td>
       </tr>
+      </tbody>
+      <tbody *ngIf="search" >
+        <tr *ngFor="let vac of searchResults"  >
+          <td>{{vac.vacancy_name}}</td>
+          <td>{{vac.experience}}</td>
+          <td><a routerLink="/jobseekerVacancyApply/{{vac.id}}">Apply</a></td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="error" >
+        <tr>
+          <td class="error" style="color:rgba(255, 0, 0, 0.621);font-weight: 500;"  colspan="3">{{errorMsg}}</td>
+        </tr>
+        <!-- <p class="error" ></p> -->
+      </tbody>
+
 
      </table>
 
