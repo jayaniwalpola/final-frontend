@@ -7,7 +7,9 @@
     </div>
     <div class="search-box">
       <div class="col-md-12">
-        <input type="text" class="form-control" #box  (keyup.enter)="searchValue(box.value)" placeholder="Search companies here" name="search" >
+        <form  (keyup.enter)="searchValue(box.value)" >
+          <input type="text" class="form-control" #box   placeholder="Search channels here" name="search" >
+        </form>
       </div>
     </div>
   </div>
@@ -42,6 +44,10 @@
       </div>
     </div>
     </ng-container>
+
+    <div *ngIf="error">
+      <p class="error">{{errorMsg}}</p>
+    </div>
 
 
 

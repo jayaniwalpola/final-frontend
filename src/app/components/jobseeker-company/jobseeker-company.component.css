@@ -41,6 +41,13 @@
   float: right;
 
 }
+.error{
+  color:rgba(255, 0, 0, 0.621);
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center
+
+}
 .create-btn:hover{
   color:#391c46;
   background:white;

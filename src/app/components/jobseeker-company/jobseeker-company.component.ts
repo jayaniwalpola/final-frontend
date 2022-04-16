@@ -22,6 +22,10 @@ export class JobseekerCompanyComponent implements OnInit {
   search: boolean = false;
   searchResults:any;
   apiUrl = environment.backend_url;
+  errorMsg:any;
+  error: boolean = false;
+
+
 
 
 
@@ -36,6 +40,7 @@ export class JobseekerCompanyComponent implements OnInit {
     this.dataService.vacancyChannelCompanyById(this.id,this.data).subscribe(res =>{
       // console.log(res);
       this.view =true;
+      this.error =false;
       this.companyChannels = res;
     });
   }
@@ -56,6 +61,8 @@ export class JobseekerCompanyComponent implements OnInit {
 
     this.search =true;
     this.view = false;
+    this.error =false;
+
 
     const fd = new FormData();
 
@@ -77,7 +84,15 @@ export class JobseekerCompanyComponent implements OnInit {
 
           break;
         case HttpEventType.Response:
-          console.log(event.body);
+          console.log(event.body.response);
+          if(event.body.response == "false")
+          {
+
+            this.search = false;
+            this.view = false;
+            this.error = true;
+            this.errorMsg = event.body.msg;
+          }
           this.searchResults = event.body;
 
       }
