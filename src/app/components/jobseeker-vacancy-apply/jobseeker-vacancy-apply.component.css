@@ -14,6 +14,11 @@
   font-weight:500;
   color:#510b72;
 }
+.success{
+  color:red;
+  text-align:center;
+  padding-top:15px;
+}
 .vac-details{
   border-right: 1px solid rgba(0, 0, 0, 0.473);
   margin-top: 50px;

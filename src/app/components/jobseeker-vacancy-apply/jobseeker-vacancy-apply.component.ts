@@ -48,6 +48,7 @@ export class JobseekerVacancyApplyComponent implements OnInit {
   mySelect = '2';
   selectedValue: any;
   msg:any;
+  success =false;
   buttonEnable =false;
   application = new Applicaion();
 
@@ -58,6 +59,7 @@ export class JobseekerVacancyApplyComponent implements OnInit {
   update_res :any=[]; // store upalod response
   progress:any; //
   ProgressBar :any;
+  successmgs:any;
   upalod_status_message:any =[];
 
 
@@ -159,8 +161,11 @@ export class JobseekerVacancyApplyComponent implements OnInit {
       reportProgress:true,
       observe:'events'
     }).subscribe(event =>{
+      // console.log(event);
+
       this.update_res = event;
       //console.logthis.update_profile_res = events;
+
       if(event.type === HttpEventType.UploadProgress){
         this.progress = Math.round(this.update_res.loaded /  this.update_res.total*100);
         this.ProgressBar = this.progress+"%";
@@ -168,7 +173,8 @@ export class JobseekerVacancyApplyComponent implements OnInit {
       }
       else if(this.update_res.type === HttpEventType.Response){
         this.upalod_status_message=this.update_res.body ;
-        console.log(this.upalod_status_message);
+        console.log(this.upalod_status_message.status);
+
         if(this.upalod_status_message.status=="1"){
           this.progress = 0;
           // this.file_upload_form.reset();
@@ -176,6 +182,10 @@ export class JobseekerVacancyApplyComponent implements OnInit {
           // this.modalService.dismissAll();
           // this.SuccessMessage(this.upalod_status_message.message);
           //location.reload();
+          this.success =true;
+
+          this.successmgs = this.upalod_status_message.message;
+
 
         }else{
           this.progress = 0;
@@ -184,8 +194,8 @@ export class JobseekerVacancyApplyComponent implements OnInit {
           // this.ErrorMessage(this.upalod_status_message.message);
          // location.reload();
         }
-
       }
+
 
     });
 

@@ -59,7 +59,7 @@
         </form>
       </div>
       <hr style="background-color:rgba(0, 0, 0, 0.473)">
-      <div>
+      <div *ngIf="!success">
         <h1 style="font-size:15px">Enables when you passed the exam</h1>
         <div>
           <form  (ngSubmit)="uploadCV()">
@@ -80,6 +80,11 @@
             </div>
           </form>
         </div>
+
+      </div>
+      <div *ngIf="success">
+        <p class="success">*{{successmgs}}</p>
+
       </div>
 
     </div>
