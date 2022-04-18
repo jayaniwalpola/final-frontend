@@ -36,6 +36,7 @@ import { JobseekerVacancyApplyComponent } from './components/jobseeker-vacancy-a
 import { CompanyCreateExamsComponent } from './components/company-create-exams/company-create-exams.component';
 import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/job-seeker-exam-page.component';
 import { CompanySelectedJobseekersComponent } from './components/company-selected-jobseekers/company-selected-jobseekers.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -71,6 +72,8 @@ import { CompanySelectedJobseekersComponent } from './components/company-selecte
     MatDialogModule,
     AppRoutingModule,
     NgbModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
     // RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],

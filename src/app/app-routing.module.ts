@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChannelAddComponent } from './components/channel-add/channel-add.component';
+// import Swal from 'sweetalert2';
+
 
 import { ChannelHomeComponent } from './components/channel-home/channel-home.component';
 import { ChannelUpdateComponent } from './components/channel-update/channel-update.component';

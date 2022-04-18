@@ -8,7 +8,7 @@ import { CompanyLoginComponent } from '../company-login/company-login.component'
 
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, RouterModule,Routes,ActivatedRoute  } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 
 // import {NgForm} from '@angular/forms'
 
@@ -21,6 +21,7 @@ import { Router, RouterModule,Routes,ActivatedRoute  } from '@angular/router';
 })
 export class ChannelAddComponent implements OnInit {
 
+
   channels: any;
   data: any;
   channel = new Channel();
@@ -30,7 +31,7 @@ export class ChannelAddComponent implements OnInit {
   myForm:FormGroup | undefined;
   item:any;
 
-  constructor(private dataService: DataService,private dialog:MatDialog ,private modalService: NgbModal,private router:Router,private route: ActivatedRoute) { }
+  constructor(private toastr: ToastrService,private dataService: DataService,private dialog:MatDialog ,private modalService: NgbModal,private router:Router,private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -67,13 +68,11 @@ export class ChannelAddComponent implements OnInit {
   }
 
   deleteChannel(id:any){
+    this.toastr.error('Successfully!', 'Channel Deleted');
     this.dataService.channelDelete(id).subscribe(res => {
       this.getChannel();
     });
   }
-  // channelUpdateView(nno: any){
-  //   this.router.navigate(['channelUpdateView',{id:nno}]);
-  // }
 }
 function data(data: any, any: any) {
   throw new Error('Function not implemented.');
