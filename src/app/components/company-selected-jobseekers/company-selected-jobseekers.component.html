@@ -13,20 +13,13 @@
           <th style="border-radius: 0px 15px 0 0;">Link</th>
       </tr>
       </thead>
-      <tr>
-        <td>fve</td>
-        <td>frdfr</td>
-        <td>rev</td>
-        <td>vtrb</td>
+      <tr *ngFor = "let data of details">
+        <td>{{data.user_name}}</td>
+        <td>{{data.email}}</td>
+        <td><a href="http://127.0.0.1:8000/storage/cvs/{{data.cvs}}">Curriculum vitae</a></td>
+        <td>{{data.contact_no}}</td>
         <td><a href="">Send</a></td>
       </tr>
-      <!-- <tr *ngFor = "let chann of channels" >
-          <td>{{chann.channel_name}}</td>
-          <td><i class="fa fa-pencil-square-o colorupdate" mat-button  style="color:rgb(163, 125, 163);" aria-hidden="true" routerLink="/channelUpdate/{{chann.id}}"  ></i></td>
-
-          <td><i class="fa fa-trash-o" aria-hidden="true" style="color:red" (click)="deleteChannel(chann.id)"></i></td>
-      </tr> -->
-
      </table>
   </div>
 

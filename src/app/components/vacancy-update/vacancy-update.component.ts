@@ -72,9 +72,7 @@ export class VacancyUpdateComponent implements OnInit {
       }
     })
 
-    this.dataService.vacancyEdit(this.id,this.vacancy).subscribe(res =>{
-
-    })
+   
   }
 
 
