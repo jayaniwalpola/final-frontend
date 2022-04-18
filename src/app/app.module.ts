@@ -35,6 +35,7 @@ import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacan
 import { JobseekerVacancyApplyComponent } from './components/jobseeker-vacancy-apply/jobseeker-vacancy-apply.component';
 import { CompanyCreateExamsComponent } from './components/company-create-exams/company-create-exams.component';
 import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/job-seeker-exam-page.component';
+import { CompanySelectedJobseekersComponent } from './components/company-selected-jobseekers/company-selected-jobseekers.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/jo
     JobseekerVacancyDashboardComponent,
     JobseekerVacancyApplyComponent,
     CompanyCreateExamsComponent,
-    JobSeekerExamPageComponent
+    JobSeekerExamPageComponent,
+    CompanySelectedJobseekersComponent
   ],
   imports: [
     BrowserModule,

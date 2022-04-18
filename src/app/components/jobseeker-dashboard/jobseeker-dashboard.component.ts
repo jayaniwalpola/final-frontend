@@ -28,7 +28,10 @@ export class JobseekerDashboardComponent implements OnInit {
   constructor(private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+    sessionStorage.removeItem('com_id');
+
     this.getCompany();
+
   }
   getCompany(){
     this.dataService.companyGet(this.data).subscribe(res=>{

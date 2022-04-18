@@ -33,6 +33,7 @@ export class JobseekerCompanyComponent implements OnInit {
 
   ngOnInit(): void {
     this.id  = this.route.snapshot.params.id;
+    sessionStorage.setItem('com_id', this.id);
     this.getchan();
     this.getCom()
   }

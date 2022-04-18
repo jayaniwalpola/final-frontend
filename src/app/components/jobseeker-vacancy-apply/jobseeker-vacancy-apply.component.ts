@@ -17,6 +17,7 @@ export class JobseekerVacancyApplyComponent implements OnInit {
 
   id: any;
   jId:any
+  cId:any
   data: any;
   vacancy = new Vacancy();
   jobApplier = new JobApplier();
@@ -70,6 +71,8 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     this.getData();
 
       this.jId = sessionStorage.getItem('id');
+
+      this.cId = sessionStorage.getItem('com_id');
 
       this.msg = sessionStorage.getItem('message');
         if(this.msg == "Pass")
@@ -150,11 +153,12 @@ export class JobseekerVacancyApplyComponent implements OnInit {
     }
   }
   uploadCV(){
-    console.log("hi");
+    console.log(this.cId);
 
     const fd = new FormData();
 
     fd.append('cvs',this.selectedFile,this.selectedFile.name);
+    fd.append('com_id',this.cId);
 
 
     this.http.post(this.apiUrl+'/cvUpload/'+this.jId,fd,{
