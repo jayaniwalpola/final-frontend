@@ -69,7 +69,7 @@ export class CompanyCreateExamsComponent implements OnInit {
 
   }
   selectChange2() {
-    this.selectedValue2 = this.dataService.getDropDownText(this.mySelect, this.level)[0].name;
+    this.selectedValue2 = this.dataService.getDropDownText(this.mySelect2, this.level)[0].name;
 }
   selectChange() {
     this.selectedValue = this.dataService.getDropDownText(this.mySelect, this.vacancies)[0].id

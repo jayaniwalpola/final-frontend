@@ -3,7 +3,7 @@
 
 <div class="main">
   <div class="tableDiv">
-    <table class="st">
+    <table class="st table table-striped">
       <thead>
       <tr style="border-bottom:solid 1px black;">
           <th style="border-radius: 15px 0 0 0;">Name</th>
@@ -16,7 +16,7 @@
       <tr *ngFor = "let data of details">
         <td>{{data.user_name}}</td>
         <td>{{data.email}}</td>
-        <td><a href="http://127.0.0.1:8000/storage/cvs/{{data.cvs}}">Curriculum vitae</a></td>
+        <td><a href="http://127.0.0.1:8000/storage/cvs/{{data.cvs}}"><img src="../../../assets/img/pdf_109.png" alt="">Open</a></td>
         <td>{{data.contact_no}}</td>
         <td><a href="">Send</a></td>
       </tr>

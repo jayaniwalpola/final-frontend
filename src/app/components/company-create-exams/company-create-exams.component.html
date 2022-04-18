@@ -27,7 +27,7 @@
           <label for="vacancyName">Exam Category:</label>
           </div>
           <div class="col-8 w-100">
-            <select class="form-control"name="my-select" [(ngModel)]="mySelect" (change)="selectChange2()">
+            <select class="form-control"name="my-select" [(ngModel)]="mySelect2" (change)="selectChange2()">
               <option value="2">--Select--</option>
               <option [value]="item.id" *ngFor="let item of level">
                   {{item.name}}

@@ -21,7 +21,7 @@
 .st{
   border-collapse:separate;
   border-spacing: 0px;
-  border:solid black 1px;
+  /* border:solid black 1px; */
   border-radius:20px;
   width: 1072px;
   margin-left: -110px;
@@ -46,9 +46,9 @@
   .st{
     border-collapse:separate;
     border-spacing: 0px;
-    border:solid black 1px;
+    /* border:solid black 1px; */
     border-radius:20px;
-    width: 400px;
+    width: 200px;
     margin-left: 5px;
     font-size: 20px;
   }
@@ -56,5 +56,5 @@
 }
 
 tr{
-  line-height:40px;
+  line-height:50px;
 }
