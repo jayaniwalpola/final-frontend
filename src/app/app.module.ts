@@ -37,6 +37,7 @@ import { CompanyCreateExamsComponent } from './components/company-create-exams/c
 import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/job-seeker-exam-page.component';
 import { CompanySelectedJobseekersComponent } from './components/company-selected-jobseekers/company-selected-jobseekers.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CompanyProfileSettingsComponent } from './components/company-profile-settings/company-profile-settings.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ToastrModule } from 'ngx-toastr';
     JobseekerVacancyApplyComponent,
     CompanyCreateExamsComponent,
     JobSeekerExamPageComponent,
-    CompanySelectedJobseekersComponent
+    CompanySelectedJobseekersComponent,
+    CompanyProfileSettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -55,7 +55,6 @@ export class JobseekerCompanyComponent implements OnInit {
     })
   }
   subscribe(){
-
     console.log("subscribe jayai");
   }
   searchValue(value:any){

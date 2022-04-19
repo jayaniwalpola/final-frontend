@@ -59,6 +59,8 @@ export class ChannelAddComponent implements OnInit {
 
 
   addChannel(item:any,channelF:NgForm){
+    this.toastr.success('Successfully!', 'Channel Added');
+
     this.dataService.channelAdd(item,this.channel).subscribe(res=>{
       this.getChannel();
       // console.log(res);

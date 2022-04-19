@@ -21,6 +21,10 @@
   color:#510b7273;
 
 }
+.channel-list{
+  border-radius: 4px;
+
+}
 .topic-channel h1{
   color:#490c66;
   font-size:30px;
@@ -37,7 +41,7 @@
   font-size:20px;
   background-color:#391c46;
   padding: 7px 40px;
-  border-radius: 50px;
+  border-radius: 4px;
   float: right;
 
 }
@@ -71,12 +75,12 @@
   width:400px;
   height:250px;
   border:solid 1px rgba(0, 0, 0, 0.363);
-  border-radius: 50px 50px 50px 50px;
+  border-radius: 4px 4px 4px 4px;
   box-shadow: 2px 5px 10px #aaaaaa;
 
 }
 .search input{
-  border-radius: 50px 50px 50px 50px;
+  border-radius: 4px 4px 4px 4px;
   width: 700px;
   height: 50px;
 }

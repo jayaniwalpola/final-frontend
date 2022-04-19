@@ -42,7 +42,7 @@
   font-size:20px;
   background-color:#4a255c;
   padding: 8px 50px;
-  border-radius: 50px;
+  border-radius: 4px;
   float: right;
 }
 
@@ -65,7 +65,7 @@
 .st{
   border-collapse:separate;
   border-spacing: 0px;
-  border:solid black 1px;
+  /* border:solid black 1px; */
   border-radius:20px;
   width: 700px;
   margin-left: 100px;
@@ -86,7 +86,7 @@
   .st{
     border-collapse:separate;
     border-spacing: 0px;
-    border:solid black 1px;
+    /* border:solid black 1px; */
     border-radius:20px;
     width: 400px;
     margin-left: 5px;

@@ -10,6 +10,13 @@
   /* padding: 10px; */
 
 }
+.error{
+  color:rgba(255, 0, 0, 0.621);
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center
+
+}
 .main{
   margin-left: 450px; /* Same as the width of the sidenav */
   margin-top: 100px; /* Same as the width of the sidenav */
@@ -26,7 +33,7 @@
   font-size:20px;
   background-color:#4a255c;
   padding: 8px 50px;
-  border-radius: 50px;
+  border-radius: 4px;
   float: left;
 }
 .vacTopic {
@@ -47,7 +54,6 @@
 .st{
   border-collapse:separate;
   border-spacing: 0px;
-  border:solid black 1px;
   border-radius:20px;
   width: 1000px;
   margin-left: 55px;

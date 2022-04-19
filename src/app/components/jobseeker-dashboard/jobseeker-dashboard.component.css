@@ -9,7 +9,7 @@
   padding-top: 200px;
 }
 .search input{
-  border-radius: 50px 50px 50px 50px;
+  border-radius: 4px 4px 4px 4px;
   width: 700px;
   height: 50px;
 }
@@ -18,8 +18,8 @@ background-color: white;
 width:900px;
 height:145px;
 margin-left: 400px;
-border:solid 1px rgba(0, 0, 0, 0.363);
-border-radius: 80px 80px 80px 80px;
+/* border:solid 1px rgba(0, 0, 0, 0.363); */
+border-radius: 4px 4px 4px 4px;
 box-shadow: 2px 5px 10px #aaaaaa;
 }
 .channel-list{
@@ -42,7 +42,7 @@ img{
 @media only screen and (max-width: 1000px) {
 
   .search input{
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 4px 4px 4px 4px;
     width: 600px;
     height: 50px;
   }
@@ -51,8 +51,8 @@ img{
     width:700px;
     height:145px;
     margin-left: 65px;
-    border:solid 1px rgba(0, 0, 0, 0.363);
-    border-radius: 80px 80px 80px 80px;
+    /* border:solid 1px rgba(0, 0, 0, 0.363); */
+    border-radius: 4px 4px 4px 4px;
     box-shadow: 2px 5px 10px #aaaaaa;
     }
 

@@ -1,12 +1,17 @@
 .main{
-  margin-left: 570px; /* Same as the width of the sidenav */
+  margin-left: 520px; /* Same as the width of the sidenav */
   margin-top: 100px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   text-align:center;
 }
+
+.scroll{
+  margin-left: 400px; /* Same as the width of the sidenav */
+  margin-top: 100px;
+}
 .addChan{
-  text-align: left;
+  text-align: center;
   font-size:25px;
   color:#421358e5;
   font-weight:bold;
@@ -22,12 +27,12 @@
 .formchannel{
   text-align: left;
   font-size:20px;
-
   color:#42135885;
   font-weight:bold;
+  /* width: 779px */
 }
 .channelformadd{
-  width:800px;
+  width:900px;
 }
 .create-btn
 {
@@ -42,18 +47,30 @@
 }
 
 .formDiv{
+  border-radius: 4px;
+
   float: left;
-  width: 80%;
+  /* background-color:rgba(128, 0, 128, 0.295); */
+  padding:35px;
+  box-shadow: 5px 10px 18px #888888;
 }
+
+
+
+
+
+
 @media only screen and (max-width: 1000px) {
 
   .main {
-    margin-left: 370px; /* Same as the width of the sidenav */
+    margin-left: 330px; /* Same as the width of the sidenav */
   }
-
   .colorupdate{
     color: red;
 
+  }
+  .channelformadd{
+    width:400px;
   }
 }
 

@@ -10,6 +10,7 @@ import { ChannelVacancyComponent } from './components/channel-vacancy/channel-va
 import { CompanyCreateExamsComponent } from './components/company-create-exams/company-create-exams.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
+import { CompanyProfileSettingsComponent } from './components/company-profile-settings/company-profile-settings.component';
 import { CompanyRegistrationComponent } from './components/company-registration/company-registration.component';
 import { CompanySelectedJobseekersComponent } from './components/company-selected-jobseekers/company-selected-jobseekers.component';
 import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/job-seeker-exam-page.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path:'examCreate',component:CompanyCreateExamsComponent},
   {path:'examPage/:id',component:JobSeekerExamPageComponent},
   {path:'selectedJobSeekers',component:CompanySelectedJobseekersComponent},
+  {path:'companySettings',component:CompanyProfileSettingsComponent}
 ];
 
 @NgModule({
@@ -67,4 +69,5 @@ export const routingComponent =[MainHomeComponent,
                                 JobseekerVacancyApplyComponent,
                                 CompanyCreateExamsComponent,
                                 JobSeekerExamPageComponent,
-                                CompanySelectedJobseekersComponent]
+                                CompanySelectedJobseekersComponent,
+                                CompanyProfileSettingsComponent]
