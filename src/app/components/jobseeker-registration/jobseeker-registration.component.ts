@@ -63,9 +63,6 @@ export class JobseekerRegistrationComponent implements OnInit {
     fd.append('confirm_password',this.jobseeker.confirm_password);
     fd.append('contact_no',this.jobseeker.contact_no);
 
-    // this.dataService.registerData(this.company).subscribe(res=>{
-    //   console.log(res);
-    // })
     this.http.post(this.apiUrl+'/UserRegister',fd,{
       reportProgress:true,
       observe:'events'
