@@ -48,7 +48,7 @@ export class ChannelUpdateComponent implements OnInit {
     console.log(this.channel.description);
     console.log(this.channel.summary);
 
-    this.http.put(this.apiUrl+'/channelUpdate/'+this.id,fd,{
+    this.http.post(this.apiUrl+'/channelUpdate/'+this.id,fd,{
       reportProgress:true,
       observe:'events'
 
@@ -71,9 +71,6 @@ export class ChannelUpdateComponent implements OnInit {
       }
     })
 
-    this.dataService.channelEdit(this.id,this.channel).subscribe(res =>{
-
-    })
   }
 
 }

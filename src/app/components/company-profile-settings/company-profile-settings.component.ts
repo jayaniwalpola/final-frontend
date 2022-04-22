@@ -44,6 +44,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
       console.log(res);
       this.companies =res;
       this.company = this.companies;
+      this.img=this.companies.profile_image;
       // this.img =res.body;
     })
 
@@ -51,6 +52,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
 
   onfileSelected(event:any){
     this.file_errors ="";
+    console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
     this.selectedFileName =this.selectedFile.name;
     let fileSize = 0;
@@ -115,7 +117,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
       }
       }
     });
-  
+
 
 
 

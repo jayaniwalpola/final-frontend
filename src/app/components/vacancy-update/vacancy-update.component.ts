@@ -49,7 +49,7 @@ export class VacancyUpdateComponent implements OnInit {
     console.log(this.vacancy.experience);
 
 
-    this.http.put(this.apiUrl+'/vacancyUpdate/'+this.id,fd,{
+    this.http.post(this.apiUrl+'/vacancyUpdate/'+this.id,fd,{
       reportProgress:true,
       observe:'events'
 
@@ -68,11 +68,13 @@ export class VacancyUpdateComponent implements OnInit {
         if(event.status == 200)
           {
             this._location.back();
+           
+
           }
       }
     })
 
-   
+
   }
 
 
