@@ -25,7 +25,7 @@
           <div class="com-img" >
             <img  src="http://127.0.0.1:8000/storage/company_images/{{company.profile_image}}" alt="" >
           </div>
-          <input type="file" name="img" id="img" class="form-control" (change)="onfileSelected($event)"  [(ngModel)] ="company.profile_image" >
+          <input type="file" name="img" id="img" class="form-control" (change)="onfileSelected($event)" value="company.profile_image"  [(ngModel)] ="company.profile_image" >
         </div>
 
           <div class="btnCreate col-12 pr-0">

@@ -17,6 +17,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
   apiUrl = environment.backend_url;
   item:any;
   data:any;
+  img:any;
   companies:any;
   company = new CompanyRegister();
 
@@ -40,8 +41,10 @@ export class CompanyProfileSettingsComponent implements OnInit {
   }
   getCompany(){
     this.dataService.comGetById(this.item,this.data).subscribe(res => {
+      console.log(res);
       this.companies =res;
       this.company = this.companies;
+      // this.img =res.body;
     })
 
   }
@@ -88,7 +91,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
       }
       else if(this.update_res.type === HttpEventType.Response){
         this.upalod_status_message=this.update_res.body ;
-        console.log(this.upalod_status_message);
+
         if(this.upalod_status_message.status=="1"){
           this.progress = 0;
           // this.file_upload_form.reset();
@@ -104,9 +107,15 @@ export class CompanyProfileSettingsComponent implements OnInit {
           // this.ErrorMessage(this.upalod_status_message.message);
          // location.reload();
         }
+      console.log(this.upalod_status_message.response);
+      if(this.upalod_status_message.response == 200)
+      {
+        this.router.navigate(['companydashboard']);
+
+      }
       }
     });
-    // this.router.navigateByUrl("companydashboard");
+  
 
 
 
