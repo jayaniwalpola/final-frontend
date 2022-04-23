@@ -37,6 +37,10 @@ export class CompanyProfileSettingsComponent implements OnInit {
     this.item =sessionStorage.getItem('id');
     console.log(this.item);
     this.getCompany();
+    this.img =sessionStorage.getItem('profile_image');
+    this.selectedFileName =this.img;
+
+
 
   }
   getCompany(){
@@ -44,7 +48,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
       console.log(res);
       this.companies =res;
       this.company = this.companies;
-      this.img=this.companies.profile_image;
+      // this.img=this.companies.profile_image;
       // this.img =res.body;
     })
 
@@ -54,7 +58,11 @@ export class CompanyProfileSettingsComponent implements OnInit {
     this.file_errors ="";
     console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
+
+    console.log(this.selectedFile);
+
     this.selectedFileName =this.selectedFile.name;
+    // this.selectedFileName =this.img;
     let fileSize = 0;
     let ext = null ;
     fileSize = (Math.round( this.selectedFile.size * 100 / (1024 * 1024)) / 100);
@@ -77,6 +85,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
     fd.append('company_name',this.company.company_name);
     fd.append('address',this.company.address);
     fd.append('contact_no',this.company.contact_no);
+
     fd.append('profile_image',this.selectedFile,this.selectedFile.name);
 
 

@@ -41,9 +41,7 @@ export class DataService {
   channelGetDataById(id:any,data:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/getChannelById/'+id,data);
   }
-  channelEdit(id: any,data:any){
-    return this.httpClient.put('http://127.0.0.1:8000/api/channelUpdate/'+id,data);
-  }
+
   vacancyGet(id: any,data:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/geVacancyById/'+id,data);
   }
@@ -59,9 +57,7 @@ export class DataService {
   vacancyGetById(id:any){
     return this.httpClient.get('http://127.0.0.1:8000/api/getVacancy/'+id);
   }
-  vacancyEdit(id: any,data:any){
-    return this.httpClient.put('http://127.0.0.1:8000/api/vacancyUpdate/'+id,data);
-  }
+ 
   vacancyChannelCompanyById(id:any,data:any) {
     return this.httpClient.get('http://127.0.0.1:8000/api/getChannelCompany/'+id,data);
   }

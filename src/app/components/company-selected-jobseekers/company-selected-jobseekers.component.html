@@ -18,7 +18,19 @@
         <td>{{data.email}}</td>
         <td><a href="http://127.0.0.1:8000/storage/cvs/{{data.cvs}}"><img src="../../../assets/img/pdf_109.png" alt="">Open</a></td>
         <td>{{data.contact_no}}</td>
-        <td><a href="">Send</a></td>
+        <td >
+          <form (ngSubmit)="sendEmail(box.value)" >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Meeting Link</label>
+              <input type="text" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" placeholder="Enter Meeting Link" [(ngModel)]="detailsEmail.link">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control"  #box aria-describedby="emailHelp" placeholder="Enter email" value="{{data.email}}" >
+            </div>
+            <input type="submit" class="btn btn-primary" value="Send">
+          </form>
+        </td>
+
       </tr>
      </table>
   </div>
