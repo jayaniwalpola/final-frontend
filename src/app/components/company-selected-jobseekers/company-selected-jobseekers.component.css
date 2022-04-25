@@ -29,6 +29,17 @@
   font-size: 20px;
 }
 
+.create-btn
+{
+  color:white;
+  /* font-weight: bold; */
+  font-family: arial;
+  font-size:15px;
+  background-color:#391c46;
+  padding: 5px 10px;
+  border-radius: 4px;
+
+}
 
 .st th {
   background-color:#4a255c3a ;

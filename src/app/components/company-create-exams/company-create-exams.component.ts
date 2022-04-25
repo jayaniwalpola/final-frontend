@@ -136,7 +136,7 @@ export class CompanyCreateExamsComponent implements OnInit {
     })
   }
   addAns(){
-    // console.log("lov");
+
     const fd = new FormData();
     // fd.append('related_vac',this.selectedValue);
     fd.append('A1',this.ans.A1);
@@ -176,7 +176,7 @@ export class CompanyCreateExamsComponent implements OnInit {
         case HttpEventType.UploadProgress:
         break;
         case HttpEventType.Response:
-        console.log(event);
+        // console.log(event.body.id);
         if(event.status == 200)
           {
             this.router.navigate(['companydashboard']);

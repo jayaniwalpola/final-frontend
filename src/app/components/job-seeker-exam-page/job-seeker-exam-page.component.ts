@@ -14,6 +14,7 @@ import { UserAns } from 'src/app/user-ans';
 export class JobSeekerExamPageComponent implements OnInit {
 
   id: any;
+  ansid: any;
   level: any;
   ans1: any;
   data: any;
@@ -29,6 +30,7 @@ export class JobSeekerExamPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.level =sessionStorage.getItem('Job_Category_Level');
+    this.ansid =sessionStorage.getItem('ansId');
 //  console.warn(this.level);
     this.getDataExam();
     // console.log(this.route.snapshot.params.id);
@@ -59,7 +61,9 @@ export class JobSeekerExamPageComponent implements OnInit {
         this.data = event.body;
         // console.log(this.data);
         this.exam = this.data;
-        console.log(this.exam);
+        console.log(this.data.id);
+        sessionStorage.setItem('ansId', this.data.id);
+
       }
     })
 
@@ -91,7 +95,7 @@ export class JobSeekerExamPageComponent implements OnInit {
     console.log(this.userAns.UA9);
     console.log(this.userAns.UA10);
 
-    this.http.post(this.apiUrl+'/ansCheck/'+this.id,fd,{
+    this.http.post(this.apiUrl+'/ansCheck/'+this.ansid,fd,{
       reportProgress:true,
       observe:'events'
 

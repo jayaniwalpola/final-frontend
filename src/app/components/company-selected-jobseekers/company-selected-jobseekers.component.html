@@ -19,15 +19,14 @@
         <td><a href="http://127.0.0.1:8000/storage/cvs/{{data.cvs}}"><img src="../../../assets/img/pdf_109.png" alt="">Open</a></td>
         <td>{{data.contact_no}}</td>
         <td >
-          <form (ngSubmit)="sendEmail(box.value)" >
+          <form (ngSubmit)="sendEmail(box.value)"  style="text-align: left">
             <div class="form-group">
-              <label for="exampleInputEmail1">Meeting Link</label>
-              <input type="text" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" placeholder="Enter Meeting Link" [(ngModel)]="detailsEmail.link">
+              <input type="text" class="form-control" [ngModelOptions]="{standalone: true}"   placeholder="Enter Meeting Link" [(ngModel)]="detailsEmail.link">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  #box aria-describedby="emailHelp" placeholder="Enter email" value="{{data.email}}" >
+              <input type="text" class="form-control"   #box  placeholder="Enter email" value="{{data.email}}" >
             </div>
-            <input type="submit" class="btn btn-primary" value="Send">
+            <input type="submit" class="btn create-btn shadow border border-dark" value="Send Interview Link">
           </form>
         </td>
 

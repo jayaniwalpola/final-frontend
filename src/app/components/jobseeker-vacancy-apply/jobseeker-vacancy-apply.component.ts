@@ -120,12 +120,16 @@ export class JobseekerVacancyApplyComponent implements OnInit {
         case HttpEventType.UploadProgress:
         break;
         case HttpEventType.Response:
-        console.log(event);
+        // console.log(this.selectedValue);
         if(event.status == 200)
           {
+            // console.log(event.body.Job_Category_Level);
+
+            sessionStorage.setItem('Job_Category_Level', this.selectedValue);
+
             this.router.navigate(['/examPage/'+this.id]);
           }
-          sessionStorage.setItem('Job_Category_Level', event.body.Job_Category_Level);
+
 
       }
 
