@@ -59,10 +59,11 @@ export class CompanyProfileSettingsComponent implements OnInit {
     console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
 
-    console.log(this.selectedFile);
 
     this.selectedFileName =this.selectedFile.name;
-    // this.selectedFileName =this.img;
+    console.log(this.selectedFileName);
+
+
     let fileSize = 0;
     let ext = null ;
     fileSize = (Math.round( this.selectedFile.size * 100 / (1024 * 1024)) / 100);
@@ -81,7 +82,40 @@ export class CompanyProfileSettingsComponent implements OnInit {
   }
 
   updateCompany(){
-    const fd = new FormData();
+    if(this.selectedFile == null){
+      const fd = new FormData();
+      fd.append('company_name',this.company.company_name);
+      fd.append('address',this.company.address);
+      fd.append('contact_no',this.company.contact_no);
+
+      this.http.post(this.apiUrl+'/companyUpdate/'+this.item,fd,{
+        reportProgress:true,
+        observe:'events'
+
+      }).subscribe((event:HttpEvent<any>) =>{
+        switch (event.type){
+          case HttpEventType.Sent:
+            console.log('Request has been made!');
+            break;
+          case HttpEventType.ResponseHeader:
+            console.log('Response header has been received!');
+            break;
+          case HttpEventType.UploadProgress:
+          break;
+          case HttpEventType.Response:
+          console.log(event);
+          if(event.status == 200)
+            {
+           
+              this.router.navigate(['companydashboard']);
+            }
+        }
+      })
+
+
+
+    }else{
+      const fd = new FormData();
     fd.append('company_name',this.company.company_name);
     fd.append('address',this.company.address);
     fd.append('contact_no',this.company.contact_no);
@@ -126,6 +160,10 @@ export class CompanyProfileSettingsComponent implements OnInit {
       }
       }
     });
+
+    }
+
+
 
 
 

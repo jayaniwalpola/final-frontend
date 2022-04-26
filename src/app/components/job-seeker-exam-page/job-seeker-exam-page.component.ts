@@ -117,7 +117,7 @@ export class JobSeekerExamPageComponent implements OnInit {
 
           sessionStorage.setItem('message', event.body.message);
 
-          this.router.navigate(['jobseekerVacancyApply/'+this.id]);
+          this.router.navigate(['jobseekerVacancyApply/'+this.id ]);
         }
 
       }
