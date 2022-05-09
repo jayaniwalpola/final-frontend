@@ -5,7 +5,10 @@
   <div class="formDiv ">
     <p class="createjobtopic col-4 addChan mb-5">Answer All Questions</p>
     <div class="channelformadd ">
-      <form class="formchannel mb-5 " (ngSubmit)="checkAns()">
+      <form class="formchannel mb-5 " (ngSubmit)="checkAns(box.value)">
+        <div class="form-group">
+          <input type="hidden" class="form-control"   #box   value="{{data.id}}" >
+        </div>
 
         <div class="form-group d-flex flex-row justify-content-center">
           <div class="col-4">

@@ -30,9 +30,11 @@ export class JobSeekerExamPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.level =sessionStorage.getItem('Job_Category_Level');
-    this.ansid =sessionStorage.getItem('ansId');
-//  console.warn(this.level);
     this.getDataExam();
+
+    // this.ansid =sessionStorage.getItem('ansId');
+    // console.log("hi");
+    // console.log(this.ansid);
     // console.log(this.route.snapshot.params.id);
   }
 
@@ -61,14 +63,15 @@ export class JobSeekerExamPageComponent implements OnInit {
         this.data = event.body;
         // console.log(this.data);
         this.exam = this.data;
-        console.log(this.data.id);
-        sessionStorage.setItem('ansId', this.data.id);
+        // console.log(this.data.id);
+        console.log(this.exam);
+        // sessionStorage.setItem('ansId', this.data.id);
 
       }
     })
 
   }
-  checkAns(){
+  checkAns(value:any){
 
     const fd = new FormData();
 
@@ -82,6 +85,7 @@ export class JobSeekerExamPageComponent implements OnInit {
     fd.append('UA8',this.userAns.UA8);
     fd.append('UA9',this.userAns.UA9);
     fd.append('UA10',this.userAns.UA10);
+    console.log(value);
 
 
     console.log(this.userAns.UA1);
@@ -95,7 +99,7 @@ export class JobSeekerExamPageComponent implements OnInit {
     console.log(this.userAns.UA9);
     console.log(this.userAns.UA10);
 
-    this.http.post(this.apiUrl+'/ansCheck/'+this.ansid,fd,{
+    this.http.post(this.apiUrl+'/ansCheck/'+value,fd,{
       reportProgress:true,
       observe:'events'
 
