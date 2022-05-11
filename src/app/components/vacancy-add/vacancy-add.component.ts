@@ -30,6 +30,7 @@ export class VacancyAddComponent implements OnInit {
   }
   addVacancy(id:any){
 
+
     const fd = new FormData();
     fd.append('vacancy_name',this.vacancy.vacancy_name);
     fd.append('vacancy_des',this.vacancy.vacancy_des);

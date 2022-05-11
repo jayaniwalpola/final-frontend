@@ -31,9 +31,9 @@
             </div>
 
             <div class="sub-btn">
-              <form (ngSubmit)="subscribe()">
-                <input type="hidden" value="{{detail.id}}">
-                <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
+              <form (ngSubmit)="subscribe(box.value)">
+                <input type="hidden" #box value="{{detail.id}}">
+                <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub">
               </form>
             </div>
           </div>
@@ -52,9 +52,9 @@
                 </div>
 
                 <div class="sub-btn">
-                  <form (ngSubmit)="subscribe()">
-                    <input type="hidden" value="{{detail.id}}">
-                    <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub" onclick="c();">
+                  <form (ngSubmit)="subscribe(box.value)">
+                    <input type="hidden" #box value="{{detail.id}}">
+                    <input type="submit" value ="SUBSCRIBE" class="btn create-btn shadow border border-dark create-btn" id="sub">
                   </form>
                 </div>
               </div>
@@ -63,7 +63,7 @@
     </ng-container>
     <div *ngIf="error">
       <p class="error"  >
-        
+
           {{errorMsg}}
       </p>
     </div>

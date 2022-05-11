@@ -1,21 +1,25 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { JobSeeker } from 'src/app/job-seeker';
 import { DataService } from 'src/app/service/data.service';
-import { CompanyRegister } from 'src/app/company-register';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/common/http';
-import { combineLatest } from 'rxjs';
-import { Router, RouterModule,Routes } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 
 @Component({
-  selector: 'app-company-registration',
-  templateUrl: './company-registration.component.html',
-  styleUrls: ['./company-registration.component.css']
+  selector: 'app-jobseeker-profile-settings',
+  templateUrl: './jobseeker-profile-settings.component.html',
+  styleUrls: ['./jobseeker-profile-settings.component.css']
 })
-export class CompanyRegistrationComponent implements OnInit {
+export class JobseekerProfileSettingsComponent implements OnInit {
 
-  company = new CompanyRegister();
+  apiUrl = environment.backend_url;
+  item:any;
+  data:any;
+  img:any;
+  jobseekers:any;
+  jobseeker = new  JobSeeker();
+
   file_errors:any;
   selectedFile: File = null as any;
   selectedFileName = "Choose File";
@@ -24,22 +28,34 @@ export class CompanyRegistrationComponent implements OnInit {
   progress:any; //
   ProgressBar :any;
   upalod_status_message:any =[];
-  // CompanyForm = new FormGroup({});
-
-  com_data:any = sessionStorage.getItem('company_name');
-  apiUrl = environment.backend_url;
-
-  constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
+  constructor(private route: ActivatedRoute,private http:HttpClient,private router:Router,private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.item =sessionStorage.getItem('id');
+    console.log(this.item);
+    this.getJobSeeker();
   }
+  getJobSeeker(){
+    this.dataService.jobGetById(this.item,this.data).subscribe(res => {
+      console.log(res);
+      this.jobseekers =res;
+      this.jobseeker = this.jobseekers;
 
+    })
+
+  }
 
 
   onfileSelected(event:any){
     this.file_errors ="";
+    console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
+
+
     this.selectedFileName =this.selectedFile.name;
+    console.log(this.selectedFileName);
+
+
     let fileSize = 0;
     let ext = null ;
     fileSize = (Math.round( this.selectedFile.size * 100 / (1024 * 1024)) / 100);
@@ -56,23 +72,49 @@ export class CompanyRegistrationComponent implements OnInit {
       }
     }
   }
+  updateJobseeker(){
+    if(this.selectedFile == null){
+      const fd = new FormData();
+      fd.append('user_name',this.jobseeker.user_name);
+      fd.append('address',this.jobseeker.address);
+      fd.append('contact_no',this.jobseeker.contact_no);
+
+      this.http.post(this.apiUrl+'/userUpdate/'+this.item,fd,{
+        reportProgress:true,
+        observe:'events'
+
+      }).subscribe((event:HttpEvent<any>) =>{
+        switch (event.type){
+          case HttpEventType.Sent:
+            console.log('Request has been made!');
+            break;
+          case HttpEventType.ResponseHeader:
+            console.log('Response header has been received!');
+            break;
+          case HttpEventType.UploadProgress:
+          break;
+          case HttpEventType.Response:
+          console.log(event);
+          if(event.status == 200)
+            {
+
+              this.router.navigate(['jobseekerDashboard']);
+            }
+        }
+      })
 
 
-  registerData(){
-    const fd = new FormData();
-    fd.append('company_name',this.company.company_name);
+
+    }else{
+      const fd = new FormData();
+      fd.append('user_name',this.jobseeker.user_name);
+      fd.append('address',this.jobseeker.address);
+      fd.append('contact_no',this.jobseeker.contact_no);
+
     fd.append('profile_image',this.selectedFile,this.selectedFile.name);
-    fd.append('address',this.company.address);
-    fd.append('description',this.company.description);
-    fd.append('password',this.company.password);
-    fd.append('email',this.company.email);
-    fd.append('confirm_password',this.company.confirm_password);
-    fd.append('contact_no',this.company.contact_no);
 
-    // this.dataService.registerData(this.company).subscribe(res=>{
-    //   console.log(res);
-    // })
-    this.http.post(this.apiUrl+'/CompanyRegister',fd,{
+
+    this.http.post(this.apiUrl+'/userUpdate/'+this.item,fd,{
       reportProgress:true,
       observe:'events'
     }).subscribe(event =>{
@@ -85,7 +127,7 @@ export class CompanyRegistrationComponent implements OnInit {
       }
       else if(this.update_res.type === HttpEventType.Response){
         this.upalod_status_message=this.update_res.body ;
-        console.log(this.upalod_status_message);
+
         if(this.upalod_status_message.status=="1"){
           this.progress = 0;
           // this.file_upload_form.reset();
@@ -101,13 +143,24 @@ export class CompanyRegistrationComponent implements OnInit {
           // this.ErrorMessage(this.upalod_status_message.message);
          // location.reload();
         }
+      console.log(this.upalod_status_message.response);
+      if(this.upalod_status_message.response == 200)
+      {
+        this.router.navigate(['jobseekerDashboard']);
 
       }
-      // console.log(event.status);
-
-
+      }
     });
-    this.router.navigateByUrl("companylogin");
+
+    }
+
+
+
+
+
+
   }
+
+
 
 }

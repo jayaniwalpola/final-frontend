@@ -1,12 +1,14 @@
 
 <div class="wrapper d-flex " style="padding-top:90px">
-  <div class="sidebar sidenav">
-    <a routerLink="/companydashboard" >Home</a>
-    <a routerLink="/channelhome">Channels</a>
-    <a routerLink="/examCreate">Create Exams</a>
-    <a  routerLink="/selectedJobSeekers">View Selected Candidates</a>
-    <a routerLink="/companySettings">Settings</a>
+  <div class="sidebar sidenav " (click)="onButtonGroupClick($event)">
+    <a routerLink="/companydashboard" routerLinkActive="active" >Home</a>
+    <a routerLink="/channelhome"  routerLinkActive="active">Channels</a>
+    <a routerLink="/examCreate"  routerLinkActive="active">Create Exams</a>
+    <a routerLink="/selectedJobSeekers"  routerLinkActive="active">View Selected Candidates</a>
+    <a routerLink="/companySettings"  routerLinkActive="active">Settings</a>
     <a (click)="logOut()">Logout</a>
-
   </div>
+
+
 </div>
+

@@ -77,7 +77,6 @@ export class JobseekerVacancyApplyComponent implements OnInit {
       this.msg = sessionStorage.getItem('message');
         if(this.msg == "Pass")
           {
-            // console.log("jey");
             this.buttonEnable = true;
           }
   }
@@ -96,11 +95,11 @@ export class JobseekerVacancyApplyComponent implements OnInit {
   addExam(){
     const fd = new FormData();
 
-    fd.append('Name',this.jobApplier.Name);
+    fd.append('user_id',this.jId);
     fd.append('Job_Category_Level',this.selectedValue);
     fd.append('Phone_no',this.jobApplier.Phone_no);
 
-    console.log(this.jobApplier.Name);
+    console.log(this.jId);
     console.log(this.selectedValue);
     console.log(this.jobApplier.Phone_no);
 
@@ -163,6 +162,7 @@ export class JobseekerVacancyApplyComponent implements OnInit {
 
     fd.append('cvs',this.selectedFile,this.selectedFile.name);
     fd.append('com_id',this.cId);
+    fd.append('vacancy_id',this.id);
 
 
     this.http.post(this.apiUrl+'/cvUpload/'+this.jId,fd,{

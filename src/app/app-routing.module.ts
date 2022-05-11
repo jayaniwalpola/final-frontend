@@ -17,12 +17,14 @@ import { JobSeekerExamPageComponent } from './components/job-seeker-exam-page/jo
 import { JobseekerCompanyComponent } from './components/jobseeker-company/jobseeker-company.component';
 import { JobseekerDashboardComponent } from './components/jobseeker-dashboard/jobseeker-dashboard.component';
 import { JobseekerLoginComponent } from './components/jobseeker-login/jobseeker-login.component';
+import { JobseekerProfileSettingsComponent } from './components/jobseeker-profile-settings/jobseeker-profile-settings.component';
 import { JobseekerRegistrationComponent } from './components/jobseeker-registration/jobseeker-registration.component';
 import { JobseekerVacancyApplyComponent } from './components/jobseeker-vacancy-apply/jobseeker-vacancy-apply.component';
 import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacancy-dashboard/jobseeker-vacancy-dashboard.component';
 import { MainHomeComponent } from './components/main-home/main-home.component';
 import { VacancyAddComponent } from './components/vacancy-add/vacancy-add.component';
 import { VacancyUpdateComponent } from './components/vacancy-update/vacancy-update.component';
+
 
 const routes: Routes = [
   {path:'',component: MainHomeComponent},
@@ -44,7 +46,8 @@ const routes: Routes = [
   {path:'examCreate',component:CompanyCreateExamsComponent},
   {path:'examPage/:id',component:JobSeekerExamPageComponent},
   {path:'selectedJobSeekers',component:CompanySelectedJobseekersComponent},
-  {path:'companySettings',component:CompanyProfileSettingsComponent}
+  {path:'companySettings',component:CompanyProfileSettingsComponent},
+  {path:'jobseekerSettings',component:JobseekerProfileSettingsComponent},
 ];
 
 @NgModule({
@@ -70,4 +73,5 @@ export const routingComponent =[MainHomeComponent,
                                 CompanyCreateExamsComponent,
                                 JobSeekerExamPageComponent,
                                 CompanySelectedJobseekersComponent,
-                                CompanyProfileSettingsComponent]
+                                CompanyProfileSettingsComponent,
+                                JobseekerProfileSettingsComponent]

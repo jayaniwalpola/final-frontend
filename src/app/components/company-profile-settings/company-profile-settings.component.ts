@@ -40,16 +40,14 @@ export class CompanyProfileSettingsComponent implements OnInit {
     this.img =sessionStorage.getItem('profile_image');
     this.selectedFileName =this.img;
 
-
-
   }
+  
   getCompany(){
     this.dataService.comGetById(this.item,this.data).subscribe(res => {
       console.log(res);
       this.companies =res;
       this.company = this.companies;
-      // this.img=this.companies.profile_image;
-      // this.img =res.body;
+
     })
 
   }
@@ -106,7 +104,7 @@ export class CompanyProfileSettingsComponent implements OnInit {
           console.log(event);
           if(event.status == 200)
             {
-           
+
               this.router.navigate(['companydashboard']);
             }
         }

@@ -3,16 +3,18 @@
 .sidenav a {
   margin-top:10px;
   font-family: arial,sans-serif;
-  padding: 10px 20px 7px 17px;
+  padding: 15px 20px 15px 17px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   display: block;
   font-weight: bold;
 }
 
+
 .sidenav a:hover {
   color: #f1f1f188;
+
   background-color: rgba(59, 59, 59, 0.555);
 }
 

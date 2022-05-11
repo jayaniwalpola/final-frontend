@@ -1,5 +1,5 @@
 export class JobApplier {
-  Name:any;
+  User_id:any;
   Job_Category_Level:any;
   Phone_no:any;
 }
