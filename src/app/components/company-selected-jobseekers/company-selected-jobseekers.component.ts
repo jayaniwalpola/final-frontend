@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EmailDetails } from 'src/app/email-details';
 import { DataService } from 'src/app/service/data.service';
 import { environment } from 'src/environments/environment';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-company-selected-jobseekers',
@@ -18,15 +19,36 @@ export class CompanySelectedJobseekersComponent implements OnInit {
   detailsEmail = new EmailDetails();
   emailSuccess: boolean = false;
 
+  closeResult = '';
 
 
-
-  constructor(private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
+  constructor(private modalService: NgbModal,private dataService: DataService,private route: ActivatedRoute,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   this.item = sessionStorage.getItem('id');
   this.getDetails();
 
+  }
+  onclick(){
+    
+  }
+
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
   getDetails(){
     // console.log("exam");
