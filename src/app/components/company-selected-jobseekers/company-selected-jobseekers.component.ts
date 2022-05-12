@@ -29,11 +29,14 @@ export class CompanySelectedJobseekersComponent implements OnInit {
   this.getDetails();
 
   }
-  onclick(){
-    
-  }
+  // onclick(){
+  //   console.log("hii");
+  // }
 
   open(content: any) {
+
+    this.detailsEmail.link = "";
+
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -51,7 +54,6 @@ export class CompanySelectedJobseekersComponent implements OnInit {
     }
   }
   getDetails(){
-    // console.log("exam");
 
     const fd = new FormData();
     fd.append('Cid',this.item);
