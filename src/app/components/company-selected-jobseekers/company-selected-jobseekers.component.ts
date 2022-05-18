@@ -29,9 +29,7 @@ export class CompanySelectedJobseekersComponent implements OnInit {
   this.getDetails();
 
   }
-  // onclick(){
-  //   console.log("hii");
-  // }
+
 
   open(content: any) {
 
@@ -42,6 +40,7 @@ export class CompanySelectedJobseekersComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
   }
 
   private getDismissReason(reason: any): string {
@@ -53,6 +52,7 @@ export class CompanySelectedJobseekersComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
   getDetails(){
 
     const fd = new FormData();
