@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/comm
 import { combineLatest } from 'rxjs';
 import { Router, RouterModule,Routes } from '@angular/router';
 import { JobSeeker } from 'src/app/job-seeker';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-jobseeker-registration',
@@ -13,6 +14,8 @@ import { JobSeeker } from 'src/app/job-seeker';
 })
 export class JobseekerRegistrationComponent implements OnInit {
 
+  stepnumber= 1;
+  registerForm: FormGroup;
   jobseeker = new JobSeeker();
   file_errors:any;
   selectedFile: File = null as any;
@@ -22,14 +25,34 @@ export class JobseekerRegistrationComponent implements OnInit {
   progress:any; //
   ProgressBar :any;
   upalod_status_message:any =[];
+  submitted = false;
 
   apiUrl = environment.backend_url;
+  error = {
+    hidden : true,
+    message : ''
+  }
 
 
 
-  constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
+  constructor(
+    private dataService: DataService,
+    private http:HttpClient,
+    private router:Router,
+    private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.compose([Validators.required, ])],      
+      },
+      
+    );
+  }
+
+  get registerFormControl() {
+    return this.registerForm.controls;
   }
 
   onfileSelected(event:any){
@@ -54,7 +77,36 @@ export class JobseekerRegistrationComponent implements OnInit {
   }
 
   registerData(){
-    const fd = new FormData();
+
+    console.log(this.jobseeker)
+    if(this.jobseeker.user_name == null)
+    {
+      this.error.hidden = false
+      this.error.message ="user Name cannot be null"
+    }
+    else if(this.jobseeker.email == null)
+    {
+      this.error.hidden = false
+      this.error.message ="Email Name cannot be null"
+    }
+    else if(this.jobseeker.password == null)
+    {
+      this.error.hidden = false
+      this.error.message ="password Name cannot be null"
+    }
+    else if(this.jobseeker.confirm_password == null)
+    {
+      this.error.hidden = false
+      this.error.message ="Confirm Password Name cannot be null"
+    }
+    else if(this.jobseeker.confirm_password != this.jobseeker.password)
+    {
+      this.error.hidden = false
+      this.error.message ="Passwords are not match"
+    }
+    else{
+      this.error.hidden = true
+      const fd = new FormData();
     fd.append('user_name',this.jobseeker.user_name);
     fd.append('profile_image',this.selectedFile,this.selectedFile.name);
     fd.append('address',this.jobseeker.address);
@@ -94,9 +146,15 @@ export class JobseekerRegistrationComponent implements OnInit {
         }
 
       }
+      this.router.navigateByUrl("jobseekerLogin");
 
+    }, (error)=> {
+      this.error.hidden = false
+      this.error.message =error.error.error
     });
-    this.router.navigateByUrl("jobseekerLogin");
+    
+    }
+    
   }
 
 

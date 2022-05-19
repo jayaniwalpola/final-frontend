@@ -2,14 +2,23 @@
 <div class="d-flex justify-content-center px-md-5 mx-md-5">
   <div id="sign-up-card" class="col-lg-4 ">
     <h1 class="pt-5 align-center">Login</h1>
-    <form class="p-5" (ngSubmit)="loginUser()" name="loginUser">
+    <form class="p-5" [formGroup]="registerForm" (ngSubmit)="loginUser()" name="loginUser">
       <div class=" pb-3">
         <div class="row pb-3 d-flex align-items-center">
           <div class="col-md-4 ">
           <label  for="">Email:</label>
           </div>
-          <div class="col-md-8">
-            <input type="email" class="form-control rounded-0" placeholder="Enter Email" name="email" [(ngModel)]="jobseeker.email">
+          <div class="col-md-8">          
+            <input type="text" class="form-control" formControlName="email">
+            <span class="text-danger"
+                *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                Email is required
+            </span>
+            <span class="text-danger"
+                *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                Enter a valid email address
+            </span>
+
           </div>
         </div>
         <div class="row d-flex align-items-center">
@@ -17,7 +26,19 @@
           <label for="">Password:</label>
           </div>
           <div class="col-md-8">
-            <input type="Password" class="form-control rounded-0"  name="password" [(ngModel)]="jobseeker.password">
+            <input type="password" class="form-control" formControlName="password">
+            <span class="text-danger"
+                *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                Password is required
+            </span>
+            <span class="text-danger"
+                *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                letter and 1 number
+            </span>
+            <span class="text-danger" *ngIf="!error.hidden">
+              {{error.message}}
+              </span>
           </div>
         </div>
       </div>

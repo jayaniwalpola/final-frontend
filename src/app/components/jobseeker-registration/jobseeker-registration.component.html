@@ -1,5 +1,5 @@
 <app-company-navbar></app-company-navbar>
-<div id="sign-up-card">
+ <div id="sign-up-card">
   <h1 class="pt-5 align-center">Create Account</h1>
   <form class="p-5" name="registerCompany" (ngSubmit)="registerData()">
     <div class="row pb-3">
@@ -42,6 +42,9 @@
       </div>
     </div>
     <div class="col-md-12 text-center pt-3 ">
+      <span class="text-danger" *ngIf="!error.hidden">
+        {{error.message}}
+        </span>
       <div >
         <input class="btn create-btn shadow border border-dark" type="submit" value="Create">
       </div>
@@ -51,3 +54,7 @@
 
   </form>
 </div>
+
+
+
+
