@@ -24,6 +24,8 @@ import { JobseekerVacancyDashboardComponent } from './components/jobseeker-vacan
 import { MainHomeComponent } from './components/main-home/main-home.component';
 import { VacancyAddComponent } from './components/vacancy-add/vacancy-add.component';
 import { VacancyUpdateComponent } from './components/vacancy-update/vacancy-update.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { CompanyForgetPasswordComponent } from './components/company-forget-password/company-forget-password.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,8 @@ const routes: Routes = [
   {path:'selectedJobSeekers',component:CompanySelectedJobseekersComponent},
   {path:'companySettings',component:CompanyProfileSettingsComponent},
   {path:'jobseekerSettings',component:JobseekerProfileSettingsComponent},
+  {path:'forgetPassword',component:ForgetPasswordComponent},
+  {path:'forgetPasswordCom',component:CompanyForgetPasswordComponent},
 ];
 
 @NgModule({
@@ -74,4 +78,7 @@ export const routingComponent =[MainHomeComponent,
                                 JobSeekerExamPageComponent,
                                 CompanySelectedJobseekersComponent,
                                 CompanyProfileSettingsComponent,
-                                JobseekerProfileSettingsComponent]
+                                JobseekerProfileSettingsComponent,
+                                ForgetPasswordComponent,
+                                CompanyForgetPasswordComponent
+                              ]

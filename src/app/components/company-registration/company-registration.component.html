@@ -7,9 +7,10 @@
       <label class="col-md-2" for="">Company Name:</label>
       <div class="col-md-4">
         <input type="text" class="form-control rounded-0"   placeholder="Enter Company Name" name="company_name" [(ngModel)]="company.company_name">
-        <!-- <span class="w-100 text-left" *ngIf="CompanyForm.get('company_name')?.invalid && CompanyForm.get('company_name')?.errors">
-          <small class="text-danger"  *ngIf="CompanyForm.get('company_name')?.hasError('maxlength')">Maximum 15 characters</small>
-        </span> -->
+        <span class="errorMsg" *ngIf="!comname_error.hidden">
+          {{comname_error.message}}
+        </span>
+
       </div>
       <label class="col-md-2" for="">Profile image</label>
       <div class="col-md-4">
@@ -23,6 +24,9 @@
       <label class="col-md-2" for="">Company Address:</label>
       <div class="col-md-4">
         <input type="text" class="form-control rounded-0" placeholder="Enter Company Address" name="address" [(ngModel)]="company.address">
+        <span class="errorMsg" *ngIf="!address_error.hidden">
+          {{address_error.message}}
+        </span>
       </div>
       <label class="col-md-2" for="">Company Description:</label>
       <div class="col-md-4">
@@ -34,10 +38,16 @@
       <label class="col-md-2" for="">Company Email:</label>
       <div class="col-md-4">
         <input type="email" class="form-control rounded-0" placeholder="Enter Company Email" name="email" [(ngModel)]="company.email">
+        <span class="errorMsg" *ngIf="!email_error.hidden">
+          {{email_error.message}}
+        </span>
       </div>
       <label class="col-md-2" for="">Password:</label>
       <div class="col-md-4">
         <input type="password" class="form-control rounded-0" placeholder="Enter Password" name="password" [(ngModel)]="company.password">
+        <span class="errorMsg" *ngIf="!password_error.hidden">
+          {{password_error.message}}
+        </span>
       </div>
 
     </div>
@@ -45,13 +55,22 @@
       <label class="col-md-2" for="">Contact No:</label>
       <div class="col-md-4">
         <input type="text" class="form-control rounded-0" placeholder="Enter Contact No" name="contact_no" [(ngModel)]="company.contact_no">
+        <span class="errorMsg" *ngIf="!contact_error.hidden">
+          {{contact_error.message}}
+        </span>
       </div>
       <label class="col-md-2" for="">Confirm Password:</label>
       <div class="col-md-4">
         <input type="password" class="form-control rounded-0" placeholder="Confirm Password" name="confirm_password" [(ngModel)]="company.confirm_password">
+        <span class="errorMsg" *ngIf="!confirmpwd_error.hidden">
+          {{confirmpwd_error.message}}
+        </span>
       </div>
     </div>
     <div class="col-md-12 text-center pt-3 ">
+      <span class="errorMsg" *ngIf="!error.hidden">
+        {{error.message}}
+        </span>
       <div >
         <input class="btn create-btn shadow border border-dark" type="submit" value="Create">
       </div>

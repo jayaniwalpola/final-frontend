@@ -39,7 +39,8 @@ import { CompanySelectedJobseekersComponent } from './components/company-selecte
 import { ToastrModule } from 'ngx-toastr';
 import { CompanyProfileSettingsComponent } from './components/company-profile-settings/company-profile-settings.component';
 import { JobseekerProfileSettingsComponent } from './components/jobseeker-profile-settings/jobseeker-profile-settings.component';
-
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { CompanyForgetPasswordComponent } from './components/company-forget-password/company-forget-password.component'
 
 @NgModule({
   declarations: [
@@ -66,7 +67,9 @@ import { JobseekerProfileSettingsComponent } from './components/jobseeker-profil
     JobSeekerExamPageComponent,
     CompanySelectedJobseekersComponent,
     CompanyProfileSettingsComponent,
-    JobseekerProfileSettingsComponent
+    JobseekerProfileSettingsComponent,
+    ForgetPasswordComponent,
+    CompanyForgetPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpEvent, HttpEventType } from '@angular/comm
 import { combineLatest } from 'rxjs';
 import { Router, RouterModule,Routes } from '@angular/router';
 import { JobSeeker } from 'src/app/job-seeker';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-jobseeker-registration',
@@ -13,6 +14,8 @@ import { JobSeeker } from 'src/app/job-seeker';
 })
 export class JobseekerRegistrationComponent implements OnInit {
 
+  stepnumber= 1;
+  registerForm: FormGroup;
   jobseeker = new JobSeeker();
   file_errors:any;
   selectedFile: File = null as any;
@@ -22,14 +25,58 @@ export class JobseekerRegistrationComponent implements OnInit {
   progress:any; //
   ProgressBar :any;
   upalod_status_message:any =[];
+  submitted = false;
 
   apiUrl = environment.backend_url;
+  error = {
+    hidden : true,
+    message : ''
+  };
+  username_error = {
+    hidden : true,
+    message : ''
+  };
+  address_error = {
+    hidden : true,
+    message : ''
+  };
+  email_error = {
+    hidden : true,
+    message : ''
+  };
+  contact_error = {
+    hidden : true,
+    message : ''
+  };
+  password_error = {
+    hidden : true,
+    message : ''
+  };
+  confirmpwd_error = {
+    hidden : true,
+    message : ''
+  };
 
 
 
-  constructor(private dataService: DataService,private http:HttpClient,private router:Router) { }
+  constructor(
+    private dataService: DataService,
+    private http:HttpClient,
+    private router:Router,
+    private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.compose([Validators.required, ])],
+      },
+
+    );
+  }
+
+  get registerFormControl() {
+    return this.registerForm.controls;
   }
 
   onfileSelected(event:any){
@@ -54,7 +101,46 @@ export class JobseekerRegistrationComponent implements OnInit {
   }
 
   registerData(){
-    const fd = new FormData();
+
+    console.log(this.jobseeker)
+    if(this.jobseeker.user_name == null || this.jobseeker.user_name == '')
+    {
+      this.username_error.hidden = false
+      this.username_error.message ="user Name cannot be null"
+    }
+    if(this.jobseeker.contact_no == null || this.jobseeker.contact_no == '')
+    {
+      this.contact_error.hidden = false
+      this.contact_error.message ="Contact number cannot be null"
+    }
+    if(this.jobseeker.address == null || this.jobseeker.address == '')
+    {
+      this.address_error.hidden = false
+      this.address_error.message ="Address cannot be null"
+    }
+    else if(this.jobseeker.email == null || this.jobseeker.email == '')
+    {
+      this.email_error.hidden = false
+      this.email_error.message ="Email  cannot be null"
+    }
+    else if(this.jobseeker.password == null || this.jobseeker.password == '')
+    {
+      this.password_error.hidden = false
+      this.password_error.message ="password  cannot be null"
+    }
+    else if(this.jobseeker.confirm_password == null || this.jobseeker.confirm_password == '')
+    {
+      this.confirmpwd_error.hidden = false
+      this.confirmpwd_error.message ="Confirm Password cannot be null"
+    }
+    else if(this.jobseeker.confirm_password != this.jobseeker.password )
+    {
+      this.error.hidden = false
+      this.error.message ="Passwords are not match"
+    }
+    else{
+      this.error.hidden = true
+      const fd = new FormData();
     fd.append('user_name',this.jobseeker.user_name);
     fd.append('profile_image',this.selectedFile,this.selectedFile.name);
     fd.append('address',this.jobseeker.address);
@@ -94,9 +180,15 @@ export class JobseekerRegistrationComponent implements OnInit {
         }
 
       }
+      this.router.navigateByUrl("jobseekerLogin");
 
+    }, (error)=> {
+      this.error.hidden = false
+      this.error.message =error.error.error
     });
-    this.router.navigateByUrl("jobseekerLogin");
+
+    }
+
   }
 
 
